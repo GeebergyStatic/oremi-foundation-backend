@@ -1,0 +1,441 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Crypto Mine Harbor</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="styles/styles.css">
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            overflow-x: hidden;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f0f0; /* Background color for the entire page */
+        }
+        .logo{
+            color: white;
+            background: #dc1e31;
+            border-radius: 50%;
+            padding: 10px;
+        }
+        .head{
+            font-size: 56px;
+        }
+        .navbar {
+            background-color: transparent;
+            transition: background-color 0.3s;
+        }
+
+        .navbar.fixed-top {
+            background-color: #fff;
+        }
+
+        .navbar-brand {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .navbar-brand img {
+            width: 50px; /* Adjust the logo size as needed */
+        }
+
+        .hero-section {
+            color: #fff;
+            text-align: left;
+            padding: 70px;
+            position: relative;
+            background-image: url('/pics/young-modern-successful-business-woman-holding-gold-bitcoin-cash-dollar-isolated-black-wall.jpg'); /* Background image for the hero section */
+            background-size: cover;
+            background-position: center;
+        }
+
+        .hero-heading {
+            font-size: 56px;
+        }
+
+        .hero-image {
+            max-width: 100%;
+            height: auto;
+        }
+
+        .btn-theme {
+            background-color: #dc1e31;
+            color: #fff;
+        }
+        .btn-white{
+            border: 2px solid white;
+            color: white;
+        }
+        .btn-white2{
+            background: white;
+            color: #dc1e31 !important;
+        }
+        .btn-white2:hover{
+            background: #dc1e31;
+            color: white !important;
+        }
+        .btn-white:hover, .btn-theme:hover{
+            background-color: white;
+            color: #dc1e31;
+        }
+
+        .glass-container {
+            background-color: rgba(0, 0, 0, 0.4); /* Glassmorphism effect */
+            backdrop-filter: blur(1px); /* Blur the background */
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        .container-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .next-section {
+            background-color: rgba(255, 255, 255, 0.2); /* Glassmorphism effect for the next section */
+        }
+        @media(min-width: 1026px){
+            .hero-section{
+                padding: 150px;
+            }
+        }
+        @media(min-width: 486px){
+            .hero-section{
+                padding: 130px;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <!-- <div class="glass-container"></div>  -->
+    <div class="hero-section">
+        <div class="glass-container"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-transparent main-nav fixed-top p-4">
+        <div class="container">
+            <a class="navbar-brand" href="#">
+               <span class="logo"><svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="currentColor" class="bi bi-bullseye" viewBox="0 0 16 16">
+                <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z"/>
+                <path d="M8 13A5 5 0 1 1 8 3a5 5 0 0 1 0 10zm0 1A6 6 0 1 0 8 2a6 6 0 0 0 0 12z"/>
+                <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8z"/>
+                <path d="M9.5 8a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z"/>
+              </svg></span>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#home">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#faq">Faq</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contact">Contact</a>
+                    </li>
+                    <li>
+                        <a href="/cryptomine/public/index.html" class="mx-4 nav-link btn btn-white2">Get Started</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+   
+        <div class="container-fluid container-content" id="home">
+            <div class="row">
+                <div class="col-md-7" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+                    <h1 class="hero-heading head">Building Wealth with Cryptos</h1>
+                    <p>Welcome to the Future of Earnings: Your Gateway to Cryptocurrency Success! Discover a world of opportunities with our cutting-edge platform, designed to empower you in the dynamic world of crypto. Get ready to take control of your financial future and unlock the potential of digital assets with us.</p>
+                    <span class="d-flex ">
+                        <a href="/cryptomine/public/index.html" class="btn btn-theme">Login</a>
+                        <a href="/cryptomine/public/index.html" class="btn btn-white mx-3">Register</a>
+                    </span>
+                </div>
+                <!-- <div class="col-md-6">
+                    <img src="your-hero-image.jpg" alt="Hero Image" class="hero-image"> 
+                </div> -->
+            </div>
+        </div>
+    </div>
+
+    <div class="next-section p-5"> 
+        <div class="text-center center-sm mx-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+            <h1 class="bolder head">The Most Reliable Crypto currency Earning Platform</h1>
+                <p>Our crypto platform is your top choice for reliable crypto earnings. With strong security, transparency, and a proven track record, we offer a secure and rewarding experience. Join us today!</p>
+        </div>
+        <div class="section-with-boxes mt-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-4" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
+                        <div class="box mt-3">
+                            <div class="text-center box-img mb-2">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cash-coin" viewBox="0 0 16 16">
+                                    <path fill-rule="evenodd" d="M11 15a4 4 0 1 0 0-8 4 4 0 0 0 0 8zm5-4a5 5 0 1 1-10 0 5 5 0 0 1 10 0z"/>
+                                    <path d="M9.438 11.944c.047.596.518 1.06 1.363 1.116v.44h.375v-.443c.875-.061 1.386-.529 1.386-1.207 0-.618-.39-.936-1.09-1.1l-.296-.07v-1.2c.376.043.614.248.671.532h.658c-.047-.575-.54-1.024-1.329-1.073V8.5h-.375v.45c-.747.073-1.255.522-1.255 1.158 0 .562.378.92 1.007 1.066l.248.061v1.272c-.384-.058-.639-.27-.696-.563h-.668zm1.36-1.354c-.369-.085-.569-.26-.569-.522 0-.294.216-.514.572-.578v1.1h-.003zm.432.746c.449.104.655.272.655.569 0 .339-.257.571-.709.614v-1.195l.054.012z"/>
+                                    <path d="M1 0a1 1 0 0 0-1 1v8a1 1 0 0 0 1 1h4.083c.058-.344.145-.678.258-1H3a2 2 0 0 0-2-2V3a2 2 0 0 0 2-2h10a2 2 0 0 0 2 2v3.528c.38.34.717.728 1 1.154V1a1 1 0 0 0-1-1H1z"/>
+                                    <path d="M9.998 5.083 10 5a2 2 0 1 0-3.132 1.65 5.982 5.982 0 0 1 3.13-1.567z"/>
+                                  </svg>
+                            </div>
+                            <h3>Profitable Mining</h3>
+                            <p>Discover the world of crypto mining and how it can lead to significant profits.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+                        <div class="box mt-3">
+                            <div class="text-center box-img2 mb-2 d-flex">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-currency-exchange floater" viewBox="0 0 16 16">
+                                    <path d="M0 5a5.002 5.002 0 0 0 4.027 4.905 6.46 6.46 0 0 1 .544-2.073C3.695 7.536 3.132 6.864 3 5.91h-.5v-.426h.466V5.05c0-.046 0-.093.004-.135H2.5v-.427h.511C3.236 3.24 4.213 2.5 5.681 2.5c.316 0 .59.031.819.085v.733a3.46 3.46 0 0 0-.815-.082c-.919 0-1.538.466-1.734 1.252h1.917v.427h-1.98c-.003.046-.003.097-.003.147v.422h1.983v.427H3.93c.118.602.468 1.03 1.005 1.229a6.5 6.5 0 0 1 4.97-3.113A5.002 5.002 0 0 0 0 5zm16 5.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0zm-7.75 1.322c.069.835.746 1.485 1.964 1.562V14h.54v-.62c1.259-.086 1.996-.74 1.996-1.69 0-.865-.563-1.31-1.57-1.54l-.426-.1V8.374c.54.06.884.347.966.745h.948c-.07-.804-.779-1.433-1.914-1.502V7h-.54v.629c-1.076.103-1.808.732-1.808 1.622 0 .787.544 1.288 1.45 1.493l.358.085v1.78c-.554-.08-.92-.376-1.003-.787H8.25zm1.96-1.895c-.532-.12-.82-.364-.82-.732 0-.41.311-.719.824-.809v1.54h-.005zm.622 1.044c.645.145.943.38.943.796 0 .474-.37.8-1.02.86v-1.674l.077.018z"/>
+                                  </svg>
+                                  <!-- second box img -->
+                                  <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-piggy-bank-fill" viewBox="0 0 16 16">
+                                    <path d="M7.964 1.527c-2.977 0-5.571 1.704-6.32 4.125h-.55A1 1 0 0 0 .11 6.824l.254 1.46a1.5 1.5 0 0 0 1.478 1.243h.263c.3.513.688.978 1.145 1.382l-.729 2.477a.5.5 0 0 0 .48.641h2a.5.5 0 0 0 .471-.332l.482-1.351c.635.173 1.31.267 2.011.267.707 0 1.388-.095 2.028-.272l.543 1.372a.5.5 0 0 0 .465.316h2a.5.5 0 0 0 .478-.645l-.761-2.506C13.81 9.895 14.5 8.559 14.5 7.069c0-.145-.007-.29-.02-.431.261-.11.508-.266.705-.444.315.306.815.306.815-.417 0 .223-.5.223-.461-.026a.95.95 0 0 0 .09-.255.7.7 0 0 0-.202-.645.58.58 0 0 0-.707-.098.735.735 0 0 0-.375.562c-.024.243.082.48.32.654a2.112 2.112 0 0 1-.259.153c-.534-2.664-3.284-4.595-6.442-4.595Zm7.173 3.876a.565.565 0 0 1-.098.21.704.704 0 0 1-.044-.025c-.146-.09-.157-.175-.152-.223a.236.236 0 0 1 .117-.173c.049-.027.08-.021.113.012a.202.202 0 0 1 .064.199Zm-8.999-.65a.5.5 0 1 1-.276-.96A7.613 7.613 0 0 1 7.964 3.5c.763 0 1.497.11 2.18.315a.5.5 0 1 1-.287.958A6.602 6.602 0 0 0 7.964 4.5c-.64 0-1.255.09-1.826.254ZM5 6.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z"/>
+                                  </svg>
+                            </div>
+                            <h3>Earn Crypto Rewards</h3>
+                            <p>Learn how to earn crypto rewards through mining activities and investment strategies.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
+                        <div class="box mt-3">
+                            <div class="text-center mb-2 box-img">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="50" height="50" fill="currentColor" class="bi bi-cash-stack" viewBox="0 0 16 16">
+                                    <path d="M1 3a1 1 0 0 1 1-1h12a1 1 0 0 1 1 1H1zm7 8a2 2 0 1 0 0-4 2 2 0 0 0 0 4z"/>
+                                    <path d="M0 5a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1H1a1 1 0 0 1-1-1V5zm3 0a2 2 0 0 1-2 2v4a2 2 0 0 1 2 2h10a2 2 0 0 1 2-2V7a2 2 0 0 1-2-2H3z"/>
+                                  </svg>
+                            </div>
+                            <h3>Maximize Earnings</h3>
+                            <p>Find out how to maximize your earnings and make the most out of crypto mining opportunities.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container gs-section bg-white text-center">
+        <h1 class="text-center mb-3 w-50 mx-auto head">Get Started With A Few Easy Steps</h1>
+        <div class="row">
+            <div class="col-sm-4 mt-3 gs-box" data-aos="fade-up" data-aos-once="true">
+                <img src="/pics/Wavy_Gen-01_Single-07.jpg" alt="" class="img-fluid d-block w-75">
+                <h5>Create Your Account</h5>
+            </div>
+            <div class="col-sm-4 mt-3 gs-box" data-aos="fade-up" data-aos-delay="200" data-aos-once="true">
+                <img src="/pics/13196.jpg" alt="" class="img-fluid d-block w-100">
+                <h5>Deposit Bitcoin from your bitcoin wallet</h5>
+            </div>
+            <div class="col-sm-4 mt-3 gs-box" data-aos="fade-up" data-aos-delay="400" data-aos-once="true">
+                <img src="/pics/Flat vector illustration of stock trader working on computer.jpg" alt="" class="img-fluid d-block w-100">
+                <h5>Start trading and earning cryptocurrency</h5>
+            </div>
+        </div>
+    </div>
+
+    <div class="container about-section" id="about">
+        <div class="row">
+            <div class="col-lg-6" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
+                <img src="/pics/about-two.png" alt="">
+            </div>
+            <div class="col-lg-6 mt-5" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
+                <h1 class="head">Profit From Trends In The Crypto Market</h1>
+                <p>The world of cryptocurrencies is ever-evolving, and staying ahead of the curve can lead to exciting opportunities for profit. At Crypto Mine Harbor, we empower users like you to capitalize on crypto market trends and harness the potential of digital assets.</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- testimonials -->
+    <section id="testimonials" class="container">
+        <h1 class=" text-center fw-bold  mb-5">Testimonials</h1>
+        <div class="row">
+          <div class="col-md-6 mt-4" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
+            <div class="testimonial text-center">
+              <img src="testimonial1.jpg" alt="Testimonial 1" class="img-fluid rounded-circle">
+              <h3>David Wilson</h3>
+              <p>Investor</p>
+              <blockquote>
+                "I've been using <span class="bolder">Crypto Mine Harbor</span> for a while now, and it has completely transformed my crypto journey. The insights and tools provided have helped me make well-informed investment decisions, resulting in significant profits. I highly recommend this platform to anyone looking to succeed in the crypto market."
+              </blockquote>
+            </div>
+          </div>
+      
+          <div class="col-md-6 mt-4" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
+            <div class="testimonial text-center">
+              <img src="testimonial2.jpg" alt="Testimonial 2" class="img-fluid rounded-circle">
+              <h3>Jennifer Brown</h3>
+              <p>Blockchain Developer</p>
+              <blockquote>
+                "As a blockchain developer, I appreciate the depth of knowledge and resources available on <span class="bolder">Crypto Mine Harbor</span>. It's not just a trading platform; it's a valuable resource hub. The educational content and community engagement have been instrumental in my professional growth."
+              </blockquote>
+            </div>
+          </div>
+        </div>
+      </section>
+      
+
+      <!-- faqs -->
+      <div class="container faqs" id="faq">
+        <h1 class="text-center mt-4 mb-5">Frequently Asked Questions</h1>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="accordion" id="accordionExample">
+                    <div class="accordion-item mt-3">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                          Accordion Item #1
+                        </button>
+                      </h2>
+                      <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <strong>This is the first item's accordion body.</strong> It is shown by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item mt-3">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                          Accordion Item #2
+                        </button>
+                      </h2>
+                      <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <strong>This is the second item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        </div>
+                      </div>
+                    </div>
+                    <div class="accordion-item mt-3">
+                      <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                          Accordion Item #3
+                        </button>
+                      </h2>
+                      <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
+                        <div class="accordion-body">
+                          <strong>This is the third item's accordion body.</strong> It is hidden by default, until the collapse plugin adds the appropriate classes that we use to style each element. These classes control the overall appearance, as well as the showing and hiding via CSS transitions. You can modify any of this with custom CSS or overriding our default variables. It's also worth noting that just about any HTML can go within the <code>.accordion-body</code>, though the transition does limit overflow.
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+            </div>
+            <div class="col-md-6">
+                <img src="/pics/faq-two.png" alt="" class="img-fluid w-100 mt-5">
+            </div>
+        </div>
+      </div>
+
+      <!-- newsletter -->
+      <div class="container-fluid theme newsletter">
+        <div class="mx-auto w-50">
+            <h1 class="text-white">Subscribe To Our Newsletter</h2>
+            <div class="d-flex sm-col align-items-center justify-content-center">
+                <input type="email" class="input mx-3 mt-2" placeholder="Email Address">
+                <button class="btn-sub mt-2">Subscribe</button>
+            </div>
+        </div>
+      </div>
+
+      <!-- Contact -->
+      <div class="container contact mt-5" id="contact">
+        <div class="row">
+            <div class="left col-md-7"></div>
+            <div class="right col-md-5">
+                <div class="d-flex">
+                    <div class="first mx-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#dc1e31" class="bi bi-geo-alt" viewBox="0 0 16 16">
+                            <path d="M12.166 8.94c-.524 1.062-1.234 2.12-1.96 3.07A31.493 31.493 0 0 1 8 14.58a31.481 31.481 0 0 1-2.206-2.57c-.726-.95-1.436-2.008-1.96-3.07C3.304 7.867 3 6.862 3 6a5 5 0 0 1 10 0c0 .862-.305 1.867-.834 2.94zM8 16s6-5.686 6-10A6 6 0 0 0 2 6c0 4.314 6 10 6 10z"/>
+                            <path d="M8 8a2 2 0 1 1 0-4 2 2 0 0 1 0 4zm0 1a3 3 0 1 0 0-6 3 3 0 0 0 0 6z"/>
+                          </svg>
+                    </div>
+                    <div class="second">
+                        <h5>Address</h5>
+                        <p>New York</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex">
+                    <div class="first mx-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#dc1e31" class="bi bi-telephone" viewBox="0 0 16 16">
+                            <path d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+                          </svg>
+                    </div>
+                    <div class="second">
+                        <h5>Phone</h5>
+                        <p>New York</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex">
+                    <div class="first mx-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#dc1e31" class="bi bi-envelope" viewBox="0 0 16 16">
+                            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"/>
+                          </svg>
+                    </div>
+                    <div class="second">
+                        <h5>Email</h5>
+                        <p>New York</p>
+                    </div>
+                </div>
+                <hr>
+                <div class="d-flex">
+                    <div class="first mx-4">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="26" height="26" fill="#dc1e31" class="bi bi-alarm" viewBox="0 0 16 16">
+                            <path d="M8.5 5.5a.5.5 0 0 0-1 0v3.362l-1.429 2.38a.5.5 0 1 0 .858.515l1.5-2.5A.5.5 0 0 0 8.5 9V5.5z"/>
+                            <path d="M6.5 0a.5.5 0 0 0 0 1H7v1.07a7.001 7.001 0 0 0-3.273 12.474l-.602.602a.5.5 0 0 0 .707.708l.746-.746A6.97 6.97 0 0 0 8 16a6.97 6.97 0 0 0 3.422-.892l.746.746a.5.5 0 0 0 .707-.708l-.601-.602A7.001 7.001 0 0 0 9 2.07V1h.5a.5.5 0 0 0 0-1h-3zm1.038 3.018a6.093 6.093 0 0 1 .924 0 6 6 0 1 1-.924 0zM0 3.5c0 .753.333 1.429.86 1.887A8.035 8.035 0 0 1 4.387 1.86 2.5 2.5 0 0 0 0 3.5zM13.5 1c-.753 0-1.429.333-1.887.86a8.035 8.035 0 0 1 3.527 3.527A2.5 2.5 0 0 0 13.5 1z"/>
+                          </svg>
+                    </div>
+                    <div class="second">
+                        <h5>Working Hours</h5>
+                        <p>Mon to Sat 9:00am to 5:00pm</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    
+      <!-- footer -->
+      <footer>
+        <ul class="d-flex justify-content-center align-items-center sm-col">
+            <li><a href="#home">Home</a></li>
+            <li><a href="">Terms Of Service</a></li>
+            <li><a href="">Privacy Policy</a></li>
+            <li><a href="">Cookie Policy</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="text-center">
+            <p>&copy; 2021 Crypto Mine Harbor</p>
+        </div>
+      </footer>
+    <!-- Include Bootstrap and jQuery scripts here -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script type="module" src="./js/main.js"></script>
+    <script>
+      AOS.init({
+        // Other AOS options here
+        loop: false // Disable looping
+      });
+      
+    </script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+      <!-- Include Bootstrap and jQuery scripts here -->
+      <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,493 @@
+@import url('https://fonts.googleapis.com/css2?family=Karla:wght@200&family=Montserrat:ital,wght@0,400;0,900;1,900&family=Overpass&family=Poppins:wght@200;300;700&family=Roboto&family=Victor+Mono:wght@100&display=swap');
+/* For WebKit-based browsers (Chrome, Safari) */
+::-webkit-scrollbar {
+  width: 10px; /* Adjust the width to your preference */
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: grey; /* Set the thumb color to grey */
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Set the track color to a light grey */
+}
+
+.active{
+  background-color: rgba(197, 182, 182, 0.2);
+  border-radius: 50%;
+  text-align: center;
+}
+a{
+    color: white !important;
+}
+.navBottom{
+    justify-content: space-around !important;
+    padding: 5rem;
+}
+.tmn{
+  /* font-family: 'Times New Roman', Times, serif; */
+}
+.ex-btn{
+    width: 50% !important;
+    border-radius: 30px !important;
+    font-weight: 600 !important;
+}
+.ex-btn2{
+    border-radius: 50%;
+}
+.increase_size{
+  padding: 3rem;
+}
+.bolder{
+  /* font-size: 40px; */
+  font-weight: bolder;
+}
+.bold{
+  font-weight: bold;
+}
+.btn-theme {
+  background-color: #dc1e31;
+  color: #fff;
+  border: none;
+  padding: 10px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  text-align: end;
+  margin-left: 67%;
+}
+.bottom-panel {
+    position: fixed;
+    bottom: -20%; /* Adjust this value to move the panel up */
+    left: 50%;
+    /* padding: 50%; */
+    transform: translateX(-50%); /* Center the panel horizontally */
+    width: 100%; /* Set width to 100% */
+    background-color: #e2ecf0;
+    border-top-left-radius: 30px;
+    border-top-right-radius: 30px;
+    box-shadow: 0px -4px 8px rgba(0, 0, 0, 0.2);
+    padding: 20px;
+    transition: transform 0.3s;
+    z-index: 1000; /* Adjust this value to ensure the panel appears above the navbar */
+  }
+  
+  /* Rest of your CSS remains unchanged */
+  
+  
+  .bottom-panel.expanded {
+    transform: translateX(-50%) translateY(-30px);
+    bottom: 0%;
+  }
+  
+  .toggle-button {
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .input-fields {
+    margin-top: 20px;
+  }
+
+  .homeImg{
+    width: 40px;
+  }
+
+  /* navigation */
+  .navigation {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 60px;
+    background-color: #f8f9fa;
+    transition: transform 0.3s;
+  }
+  
+  .navigation.active {
+    transform: translateX(0);
+  }
+  /* ... (existing styles) ... */
+
+.nav-toggler {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  z-index: 1000;
+}
+
+.offcanvas.show {
+  transform: translateX(0);
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5); /* Adjust opacity as needed */
+  z-index: 2001; /* Ensure the backdrop is above the other content */
+}
+.border-top-theme{
+  font-family: 'Montserrat', sans-serif;
+  border-top: 2px solid #dc1e31;
+  border-radius: 10px;
+}
+
+.site-nav{
+  width: 80%;
+  height: 53px;
+  position: absolute;
+  bottom: 10px;
+  background: #96000f !important;
+  left: 10%;
+  border-radius: 10px;
+  padding: 8px;
+}
+  
+.site-nav .nav-link{
+  color: white !important;
+}
+  .navbar-toggler-icon {
+    display: block;
+    width: 20px;
+    height: 2px;
+    background-color: #333;
+  }
+  
+  .side-nav {
+    position: fixed;
+    top: 0;
+    left: -260px;
+    height: 100vh;
+    width: 240px;
+    background-color: #343a40;
+    padding-top: 20px;
+    transition: left 0.3s;
+  }
+  
+  .navigation.active .side-nav {
+    left: 0;
+  }
+  
+  .side-nav ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .side-nav li {
+    margin-bottom: 10px;
+  }
+  
+  .side-nav a {
+    display: block;
+    padding: 10px;
+    color: #f8f9fa;
+    text-decoration: none;
+  }
+
+  /* ... (existing styles) ... */
+
+.cancel-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  background-color: #dc3545;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+/* nav list */
+.navigation-list{
+  flex-direction: column;
+  align-items: start;
+  padding: 2.5rem;
+  overflow-y: scroll;
+}
+.navigation-canvas{
+  border-top-right-radius: 30px !important;
+  border-bottom-right-radius: 30px !important;
+  z-index: 2009 !important;
+  background: #f0f3f5;
+  width: 25% !important;
+}
+.navigation-close{
+  position: fixed;
+  top: 20px;
+  right: 40px;
+  background-color: white;
+  color: white;
+  padding: 8px 12px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.navigation-linkOne{
+  font-size: 23px;
+  font-weight: 500;
+  text-decoration: none;
+  color: black !important;
+}
+.navigation-link{
+  margin-top: 3rem;
+  font-size: 23px;
+  font-weight: 500;
+  text-decoration: none;
+  color: black !important;
+}
+.profile-offNav{
+  border-bottom: 1px solid gray;
+}
+.profile-state{
+  margin-top: -8px;
+}
+.column{
+  flex-direction: column;
+  align-items: start;
+}
+
+.nav-img{
+  border-radius: 50%;
+}
+.navigaion-img{
+  width: 80%;
+}
+#id0{
+  fill: #0302CB;
+  stroke: wheat  ;
+}
+.toggle-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 20px;
+  width: 50%;
+  background-color: #ccc;
+  border-radius: 30px;
+}
+
+.toggle-btn button {
+  flex: 1;
+  padding: 10px;
+  background-color: #ccc;
+  border: none;
+  cursor: pointer;
+}
+.toggle-btn button.active {
+  background: linear-gradient(to right, #200066, #0302CB, #00E0FF) !important;
+  color: #fff;
+}
+#publicBtn{
+  border-radius: 30px;
+}
+#standardBtn{
+  border-radius: 30px;
+}
+#executiveBtn{
+  border-radius: 30px;
+}
+/* Add this CSS to your LoadingPageCarousel.css or your preferred CSS file */
+.carousel-container {
+  position: relative;
+  width: 100%;
+  /* height: 100%; */
+  border: 2px solid green;
+}
+
+.carousel {
+  max-width: 100%;
+  height: auto;
+}
+
+.continue-btn {
+  border: none;
+  background-color: transparent !important;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Style for the indicator container */
+.carousel-indicator {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px; /* Adjust the margin as needed */
+}
+
+/* Style for the indicator dots */
+.indicator-dot {
+  width: 10px; /* Adjust the width of the dots */
+  height: 10px; /* Adjust the height of the dots */
+  background-color: #0000FE; /* Default color for inactive dots */
+  border-radius: 30px; /* Make them circular */
+  margin: 0 3.5px; /* Adjust the spacing between dots */
+  cursor: pointer;
+}
+
+/* Style for the active dot */
+.current {
+  background-color: #0000FE; /* Change the color for the active dot */
+  transform: scale(1.2); /* Increase the size of the active dot */
+  width: 28px;
+  transform: rotateY(360deg);
+  transition: transform 0.3s ease; /* Add a smooth transition */
+}
+
+
+
+.unavailable{
+  font-size: 100%;
+}
+/* Add this CSS code to your LoadingPageCarousel.css or your preferred CSS file */
+
+/* Default styles */
+.carousel-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+
+.carousel-nav-btn {
+  background-color: transparent;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.bottom-right-modal {
+  position: fixed;
+  background: white;
+  bottom: 100px;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  transition: 0.4s;
+  right: 20px;
+  padding: 25px;
+  z-index: 2001; /* Ensure the backdrop is above the other content */
+}
+
+/* .modal-content {
+  background-color: white;
+  border: 1px solid #dc1e31;
+  border-radius: 5px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+  padding: 80px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  transform: translate(-50%, 50%);
+  z-index: 2001;
+} */
+.modal-content .header__logout{
+  border: 1px solid #dc1e31;
+  border-radius: 4px;
+}
+.modal-content button {
+  display: block;
+  margin-top: 10px;
+}
+.drop-list{
+  overflow-y: scroll;
+}
+.taskBox{
+  overflow-y: scroll;
+}
+.task-btn{
+  height: 80%;
+  outline: none;
+  background: #dc1e31;
+  border: none;
+  padding: 9px;
+  color: white;
+  border-radius: 9px;
+}
+.success-btn{
+  color: #0b7a25;
+}
+.bonus-btn{
+  height: 80%;
+  outline: none;
+  background: #0b7a25;
+  border: none;
+  padding: 9px;
+  color: white;
+  border-radius: 9px;
+}
+.i-task{
+  border-bottom: 1px solid gray;
+}
+.i-task .text-theme{
+  color: #dc1e31;
+}
+.notification{
+  background-color: rgb(207, 207, 207);
+  text-align: center;
+  border-bottom: 2px solid #dc1e31;
+}
+
+/* Media query for smaller screens */
+@media (max-width: 1268px) {
+  .carousel-nav {
+    width: 100%;
+    flex-direction: column;
+     /* Stack elements vertically on smaller screens */
+    align-items: center;
+  }
+
+  .carousel-indicator {
+    margin-top: 10px;
+    margin-bottom: 30px; /* Adjust spacing as needed */
+  }
+
+  .carousel-nav-btn {
+    margin-top: 10px; /* Add margin to separate the button from indicators */
+  }
+}
+
+@media (min-width: 850px){
+  .navigation-canvas{
+    width: 25% !important;
+  }
+}
+@media (max-width: 850px) and (min-width: 650px){
+  .navigation-canvas{
+    width: 45% !important;
+  }
+}
+@media (max-width: 650px)  and (min-width: 430px){
+  .navigation-canvas{
+    width: 50% !important;
+  }
+}
+@media (max-width: 480px){
+  .i-task{
+    flex-direction: column;
+  }
+  .btn-theme {
+    margin: auto;
+  }
+}
+@media (max-width: 430px){
+  .navigation-canvas{
+    width: 70% !important;
+  }
+  .sm-col{
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+@media(max-width: 360px){
+  .site-nav{
+    padding: 1px;
+  }
+}

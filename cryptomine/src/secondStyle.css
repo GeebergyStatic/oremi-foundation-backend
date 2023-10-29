@@ -1,0 +1,170 @@
+/* WalletBalance.css */
+
+.wallet-balance-container {
+    width: 100%;
+    max-width: 500px;
+    margin: 3rem auto;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  }
+  
+  .wallet-header {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .wallet-header h2 {
+    color: #333;
+    font-size: 24px;
+  }
+  
+  .wallet-balance {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 10px;
+  }
+  
+  .balance-amount {
+    display: flex;
+    align-items: center;
+    font-size: 36px;
+    color: #009688;
+  }
+  
+  .currency-symbol {
+    font-size: 24px;
+  }
+  
+  .balance-value {
+    margin-left: 5px;
+  }
+  
+  .add-funds-button {
+    background-color: #009688;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+
+  
+  .add-funds-button:hover {
+    background-color: #00786c;
+  }
+  
+  .recent-transactions h3 {
+    color: #333;
+    font-size: 20px;
+    margin-top: 20px;
+  }
+  
+  .transaction-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .transaction-item {
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+    color: #555;
+    font-size: 16px;
+  }
+  
+  /* PaymentModal.css */
+
+.payment-modal {
+  max-width: 400px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f5f5f5;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.payment-modal h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.payment-modal input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.paystack-button {
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.paystack-button:hover {
+  background-color: #0056b3;
+}
+/* PaymentModal.css */
+
+.payment-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: url('../public/mobile_phone_coin.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 100%;
+}
+
+.payment-modal {
+  max-width: 400px;
+  width: 100%;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.payment-modal h2 {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.payment-modal input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.paystack-button {
+  background-color: #dc1e31;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.paystack-button:hover {
+  background-color: #ad1827;
+}
+
+
