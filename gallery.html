@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Browse the gallery of Oremi Azibaben Foundation's past events, community outreach programs, and charitable initiatives.">
+  <meta name="keywords"
+    content="gallery, Oremi, Eunice Azibaben Obein, charity events, community programs, photos, Oremi Azibaben Foundation, Oremi Foundation, Azibaben Foundation, charities in nigeria, charities in bayelsa state, charity in nigeria, charity in bayelsa state">
+  <meta name="author" content="Oremi Azibaben Foundation">
+  <meta property="og:title" content="Gallery | Oremi Azibaben Foundation">
+  <meta property="og:description"
+    content="Explore photos from our charity events, outreach programs, and community projects at Oremi Azibaben Foundation.">
+  <meta property="og:url" content="https://oremiazibabenfoundation.org/gallery">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gallery | Oremi Azibaben Foundation">
+  <meta name="twitter:description"
+    content="Explore photos from our charity events, outreach programs, and community projects at Oremi Azibaben Foundation.">
+  <title>Gallery</title>
+  <link rel="icon"
+    href="https://firebasestorage.googleapis.com/v0/b/broker-81de0.appspot.com/o/oremi%20files%2Flogo_raw_copy.PNG?alt=media&token=8b4217c1-4b3c-4dcb-ba5a-82b559224157"
+    type="image/png" />
+  <link rel="canonical" href="https://oremiazibabenfoundation.org/gallery" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200..800&family=Playwrite+AU+VIC+Guides&display=swap"
+    rel="stylesheet">
+  <style>
+    /* Prevent overflow-x on the whole page */
+    html,
+    body {
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      /* Background color for the entire page */
+    }
+
+    /* Full-screen Loader */
+    #loader {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      animation: pulse 2s ease-in-out infinite;
+      transition: opacity 0.5s ease;
+    }
+
+    #loader.hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+    }
+
+
+    .logo {
+      color: white;
+      background: #dc1e31;
+      border-radius: 40%;
+      padding: 5px;
+    }
+
+    .logo:hover {
+      text-decoration: none !important;
+    }
+
+    .head {
+      font-size: 56px;
+    }
+
+    .navbar {
+      background-color: transparent;
+      transition: all 0.3s ease-in-out;
+      display: flex;
+      /* Ensure the navbar container is flex */
+      justify-content: space-between;
+      /* Add space between brand logo and nav items */
+      align-items: center;
+      /* Center items vertically */
+      padding: 20px;
+      /* Adjust padding as needed */
+    }
+
+
+    /* Navbar style after scrolling 100px */
+    .navbar.scrolled {
+      backdrop-filter: blur(10px);
+      /* Background blur effect */
+      background-color: rgba(254, 245, 227, 0.7) !important;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+      /* Shadow effect */
+    }
+
+
+    /* Hover effect for nav links */
+    /* Default nav-link style */
+    /* Nav-link style after scrolling 100px */
+    .navbar .nav-link.scrolled-link {
+      color: #000315 !important;
+      /* New color after scroll */
+    }
+
+    .navbar .nav-link {
+      color: rgba(255, 255, 255, 0.8);
+      color: #ffffff;
+      /* Initial color */
+      transition: color 0.3s ease-in-out;
+      /* Smooth transition for color change */
+      font-weight: 500;
+      margin: 0 10px;
+    }
+
+    .navbar .nav-link:hover {
+      color: #ff6b6b;
+      /* Accent color for hover */
+      text-decoration: underline;
+    }
+
+    /* Navbar logo styling */
+    .navbar-brand img {
+      transition: transform 0.3s ease;
+    }
+
+    .navbar-brand:hover img {
+      transform: scale(1.1);
+      /* Subtle zoom effect */
+    }
+
+    /* Responsive spacing for navbar items */
+    .navbar-nav .nav-item {
+      margin: 0 5px;
+    }
+
+    /* Box shadow and hover interaction */
+    .shadow-blur {
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+      transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .shadow-blur:hover {
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Toggler icon color */
+    .navbar-toggler {
+      border: none;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFFFFF' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28155, 155, 155, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+
+    .custom-form-container {
+      background-color: #ffffff;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 450px;
+    }
+
+    .custom-form-title {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #333333;
+    }
+
+    .custom-form-group {
+      margin-bottom: 15px;
+    }
+
+    .custom-form-label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #555555;
+    }
+
+    .custom-input-field,
+    .custom-textarea-field {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #dddddd;
+      border-radius: 5px;
+      font-size: 14px;
+      color: #333333;
+    }
+
+    .custom-textarea-field {
+      resize: none;
+      height: 120px;
+    }
+
+    .custom-submit-button {
+      display: block;
+      width: 100%;
+      background-color: #f65d00;
+      color: #ffffff;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .custom-submit-button:hover {
+      background-color: #f65d00;
+    }
+
+
+    .custom-success {
+      background-color: #D4EDDA;
+      color: #155724;
+      border: 1px solid #C3E6CB;
+    }
+
+    .custom-error {
+      background-color: #F8D7DA;
+      color: #721C24;
+      border: 1px solid #F5C6CB;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .navbar {
+        /* backdrop-filter: blur(8px); */
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .navbar-nav .nav-item {
+        text-align: center;
+        margin: 10px 0;
+      }
+    }
+
+
+    .navbar.fixed-top {
+      background-color: #fff;
+    }
+
+    .navbar-brand {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .navbar-brand:hover {
+      text-decoration: none !important;
+    }
+
+    .navbar-brand img {
+      width: 200%;
+      /* Adjust the logo size as needed */
+    }
+
+    .mtc {
+      margin-top: 13rem;
+    }
+
+    .hero-section {
+      color: #fff;
+      text-align: left;
+      padding: 80px 30px;
+      position: relative;
+      background: url('https://firebasestorage.googleapis.com/v0/b/broker-81de0.appspot.com/o/oremi%20files%2FIMG-20250106-WA0013.jpg?alt=media&token=819b73ff-f828-4aca-95cc-6856b7263d71');
+      background-size: cover;
+      /* Adjust the percentage as needed */
+      background-position: top;
+      background-repeat: no-repeat;
+      transition: background-image 1s ease-in-out;
+      /* Smooth background change */
+    }
+
+    .hero-heading {
+      transition: opacity 0.5s ease-in-out;
+      /* Smooth text fade-in/out */
+      /* font-size: 56px; */
+    }
+
+
+    .hero-image {
+      max-width: 100%;
+      height: auto;
+    }
+
+    #testimonials {
+      width: 100% !important;
+    }
+
+    .btn-theme {
+      background-color: #dc1e31;
+      color: #fff;
+    }
+
+    .btn-theme-last {
+      background-color: #fff;
+      color: #000315;
+    }
+
+    .btn-white {
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-white2 {
+      background: white;
+      color: #dc1e31 !important;
+    }
+
+    .btn-white2:hover {
+      background: #dc1e31;
+      color: white !important;
+      text-decoration: none;
+    }
+
+    .btn-white:hover,
+    .btn-theme:hover {
+      background-color: white;
+      color: rgb(0, 0, 0) !important;
+      font-weight: bolder;
+    }
+
+    .glass-container {
+      background-color: rgba(0, 0, 0, 0.4);
+      /* Glassmorphism effect */
+      backdrop-filter: blur(1px);
+      /* Blur the background */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .container-content {
+      position: relative;
+      padding: 10px;
+      z-index: 1;
+    }
+
+    .gs-box {
+      flex-direction: column;
+    }
+
+    .next-section {
+      background-color: rgba(255, 255, 255, 0.2);
+      /* Glassmorphism effect for the next section */
+    }
+
+    .navbar-nav {
+      display: flex;
+      /* Flex layout for the nav links */
+      gap: 15px;
+      /* Add spacing between nav items */
+      list-style: none;
+      /* Remove default list styles */
+    }
+
+    .navbar-brand img {
+      max-width: 250px;
+      /* Adjust logo size if necessary */
+      height: auto;
+      /* Maintain aspect ratio */
+    }
+
+    .event-img {
+      width: 100%;
+      height: 300px;
+      /* Consistent height */
+      object-fit: cover;
+      object-position: top center;
+      /* ← Fixes top being cut off */
+      border-radius: 12px;
+      display: block;
+      transition: transform 0.3s ease;
+    }
+
+    .event-img:hover {
+      transform: scale(1.02);
+    }
+
+
+
+    @media(min-width: 1026px) {
+      .hero-section {
+        padding: 150px 30px;
+      }
+    }
+
+    @media(min-width: 991px) {
+      .sm-full {
+        width: 50%;
+      }
+
+      .carousel-item {
+        margin-left: 25%;
+      }
+
+      .navbar-brand {
+        position: absolute;
+        left: 70%;
+        transform: translateX(-50%);
+      }
+    }
+
+    @media(min-width: 486px) {
+      .hero-section {
+        padding-top: 130px 30px;
+      }
+
+      .container-content {
+        position: relative;
+        padding: 40px;
+        z-index: 1;
+      }
+
+
+    }
+
+    @media(max-width: 991px) {
+      .sm-full {
+        width: 100%;
+      }
+    }
+
+    @media(max-width: 486px) {
+      .testimonial {
+        height: 540px;
+      }
+
+      .head {
+        font-size: 46px;
+      }
+    }
+
+    @media(max-width: 444px) {
+      #elementToHide {
+        margin-left: 2.5rem;
+        /* Equivalent to mx-5 in Bootstrap */
+        margin-right: 2.5rem;
+        /* Equivalent to mx-5 in Bootstrap */
+
+      }
+    }
+
+    @media(max-width: 426px) {
+      .testimonial {
+        height: 650px;
+      }
+    }
+  </style>
+  <!-- chat code -->
+
+
+  <!-- chat code -->
+</head>
+
+<body>
+  <div id="loader">
+    <img class="img-fluid"
+      src="https://firebasestorage.googleapis.com/v0/b/broker-81de0.appspot.com/o/oremi%20files%2Flogo_main_copy.PNG?alt=media&token=20086b3d-668b-4dc8-9d76-4b16690660af"
+      alt="Logo">
+  </div>
+  <!-- <div class="glass-container"></div>  -->
+  <div class="hero-section">
+    <div class="glass-container"></div>
+    <nav class="navbar navbar-expand-xl navbar-dark bg-transparent fixed-top shadow-blur">
+      <div class="container">
+        <a class="navbar-brand" href="#" id="elementToHide">
+          <img class="img-fluid"
+            src="https://firebasestorage.googleapis.com/v0/b/broker-81de0.appspot.com/o/oremi%20files%2Flogo_main_copy.PNG?alt=media&token=20086b3d-668b-4dc8-9d76-4b16690660af"
+            alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="/index">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="/our_team">Our Team</a></li>
+            <li class="nav-item"><a class="nav-link" href="/gallery">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid container-content">
+      <div class="row">
+        <div class="col-md-7" data-aos="fade-up" data-aos-duration="800" data-aos-once="true">
+          <h1 class="hero-heading head" style="font-size: 70px;">Gallery</h1>
+        </div>
+        <div class="col-md-5">
+          <blockquote style="font-size: 25px; font-style: italic; margin-top: 5rem; ">
+            A collection of moments that capture the essence of our work and the lives we've touched.
+          </blockquote>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- gallery -->
+  <div class="container mt-5 p-3 mb-5">
+    <h3 class="head text-center">Events and Outreaches</h3>
+    <div style="background-color: #f65d00; height: 10px; width: 50%;" class="text-center mx-auto mb-5"></div>
+    <p style="font-style: italic; font-weight: bold; margin-bottom: -1px;">Outreach event in Bayelsa State ~ Partnered
+      with Annabela fashion world .</p>
+    <div class="row g-4 mb-5">
+      <!--  -->
+      <div class="col-md-4 mb-4">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/broker-81de0.appspot.com/o/oremi%20files%2Foutreach_1.jpg?alt=media&token=838223c1-f74c-4ce5-842b-51a361bfee2a"
+          class="event-img" alt="">
+      </div>
+      <div class="col-md-4 mb-4">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/broker-81de0.appspot.com/o/oremi%20files%2Foutreach_2.jpg?alt=media&token=75b0dc2d-a7d2-4263-86b8-d76a2648d479"
+          class="event-img" alt="">
+      </div>
+      <div class="col-md-4 mb-4">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/broker-81de0.appspot.com/o/oremi%20files%2Foutreach_3.jpg?alt=media&token=7aadf803-7a9d-49cd-ba5e-3091e80002f5"
+          class="event-img" alt="">
+      </div>
+    </div>
+    <div class="row g-4 mb-5">
+      <!--  -->
+      <div class="col-md-4 mb-4">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/broker-81de0.appspot.com/o/oremi%20files%2Foutreach_4.jpg?alt=media&token=dfd78296-5143-4832-8f6f-91ca923b143b"
+          class="event-img" alt="">
+      </div>
+      <div class="col-md-4 mb-4">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/broker-81de0.appspot.com/o/oremi%20files%2Foutreach_5.jpg?alt=media&token=922b4743-cf12-46ff-ae91-987fff76ece0"
+          class="event-img" alt="">
+      </div>
+      <div class="col-md-4 mb-4">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/broker-81de0.appspot.com/o/oremi%20files%2Foutreach_6.jpg?alt=media&token=922b4743-cf12-46ff-ae91-987fff76ece0"
+          class="event-img" alt="">
+      </div>
+    </div>
+
+    <!-- second event section -->
+    <p style="font-style: italic; font-weight: bold; margin-bottom: -1px;" class="mt-5">Outreach event in Bayelsa State
+      ~ Paid a visit to the elderly and children.</p>
+    <div class="row g-4 mb-5">
+      <!--  -->
+      <div class="col-md-4 mb-4">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/broker-81de0.appspot.com/o/oremi%20files%2Foutreach_7.jpg?alt=media&token=922b4743-cf12-46ff-ae91-987fff76ece0"
+          class="event-img" alt="">
+      </div>
+      <div class="col-md-4 mb-4">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/broker-81de0.appspot.com/o/oremi%20files%2Foutreach_12.jpg?alt=media&token=922b4743-cf12-46ff-ae91-987fff76ece0"
+          class="event-img" alt="">
+      </div>
+      <div class="col-md-4 mb-4">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/broker-81de0.appspot.com/o/oremi%20files%2Foutreach_9.jpg?alt=media&token=922b4743-cf12-46ff-ae91-987fff76ece0"
+          class="event-img" alt="">
+      </div>
+    </div>
+    <div class="row g-4 mb-5">
+      <!--  -->
+      <div class="col-md-4 mb-4">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/broker-81de0.appspot.com/o/oremi%20files%2Foutreach_10.jpg?alt=media&token=922b4743-cf12-46ff-ae91-987fff76ece0"
+          class="event-img" alt="">
+      </div>
+      <div class="col-md-4 mb-4">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/broker-81de0.appspot.com/o/oremi%20files%2Foutreach_11.jpg?alt=media&token=922b4743-cf12-46ff-ae91-987fff76ece0"
+          class="event-img" alt="">
+      </div>
+      <div class="col-md-4 mb-4">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/broker-81de0.appspot.com/o/oremi%20files%2Foutreach_8.jpg?alt=media&token=922b4743-cf12-46ff-ae91-987fff76ece0"
+          class="event-img" alt="">
+      </div>
+    </div>
+
+
+    <!-- third event section -->
+    <p style="font-style: italic; font-weight: bold; margin-bottom: -1px;" class="mt-5">Outreach event in Makoko, Lagos
+      State ~ Where we were one of the sponsors for a back to school project with a heart to heart foundation</p>
+    <div class="row g-4 mb-5">
+      <!--  -->
+      <div class="col-md-4 mb-4">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/broker-81de0.appspot.com/o/oremi%20files%2Foutreach_13.jpg?alt=media&token=922b4743-cf12-46ff-ae91-987fff76ece0"
+          class="event-img" style="max-height: 230px;" alt="">
+      </div>
+      <div class="col-md-4 mb-4">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/broker-81de0.appspot.com/o/oremi%20files%2Foutreach_14.jpg?alt=media&token=922b4743-cf12-46ff-ae91-987fff76ece0"
+          class="event-img" style="max-height: 230px;" alt="">
+      </div>
+      <div class="col-md-4 mb-4">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/broker-81de0.appspot.com/o/oremi%20files%2Foutreach_15.jpg?alt=media&token=922b4743-cf12-46ff-ae91-987fff76ece0"
+          class="event-img" style="max-height: 230px;" alt="">
+      </div>
+    </div>
+
+    <!-- fourth event section -->
+    <p style="font-style: italic; font-weight: bold; margin-bottom: -1px;" class="mt-5">Certification picture ~ from one
+      of our students we sponsored in the skill acquisition program with Jahdiel eddie foundation .</p>
+    <div class="row g-4 mb-5">
+      <!--  -->
+      <div class="col-md-4 mb-4">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/broker-81de0.appspot.com/o/oremi%20files%2Fcertificate.jpg?alt=media&token=7000ab22-bd02-4f0a-940a-626d58a15370"
+          class="event-img" alt="">
+      </div>
+      <div class="col-md-4 mb-4">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/broker-81de0.appspot.com/o/oremi%20files%2Fcertificate_2.jpg?alt=media&token=327a5ff0-2fcc-47ee-9b39-8af88a531653"
+          class="event-img" alt="">
+      </div>
+      <div class="col-md-4 mb-4">
+        <img
+          src="https://firebasestorage.googleapis.com/v0/b/broker-81de0.appspot.com/o/oremi%20files%2Fcertificate_3.jpg?alt=media&token=327a5ff0-2fcc-47ee-9b39-8af88a531653 class="
+          class="event-img" alt="">
+      </div>
+    </div>
+
+    <!-- fifth event section -->
+    <div id="eventContainer" class="container mt-5"></div>
+    <!-- next row -->
+
+
+  </div>
+
+
+
+  <!-- footer -->
+  <footer class="footer mt-0 container-fluid">
+    <div class="row text-white">
+      <!-- Get In Touch Section -->
+      <div class="col-md-4">
+        <h3 class="footer-title text-secondary">Explore</h3>
+        <ul class="footer-list">
+          <li><a href="/index">Home</a></li>
+          <li><a href="/about">About Us</a></li>
+          <li><a href="/our_team">Our Team</a></li>
+          <li><a href="/gallery">Gallery</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Account Section -->
+      <div class="col-md-4">
+        <h3 class="footer-title text-secondary">About Us</h3>
+        <p>
+          The Oremi Azibaben Foundation is a legally registered non-governmental organization (NGO) dedicated to
+          impactful charity work in Nigeria and across Africa. With a global network, the foundation is committed to
+          creating a better world by bringing hope and support to humanity.
+
+
+        </p>
+      </div>
+
+      <!-- Call-to-Action Button -->
+      <!-- Consult Us Button -->
+      <div class="col-md-4 mt-4">
+        <h3 class="footer-title text-secondary">Contact Us</h3>
+        <p>No 75 Captain Ayeni Street, Kpansia, Yenagoa, Bayelsa State</p>
+        <p><a href="tel:+2348082915070" class="contact-link">(+234) 08082915070</a></p>
+        <p><a href="mailto:oremifoundation.ng@gmail.com" class="contact-link">oremifoundation.ng@gmail.com</a></p>
+      </div>
+
+
+      <!-- Notification Popup -->
+      <div id="chatNotification" class="chat-popup">
+        <p>
+          Need help? <strong>Tap the chat bubble</strong> on your screen to consult us live!
+        </p>
+        <span class="close-popup" onclick="closeNotification()">&times;</span>
+      </div>
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="text-center mt-5 mb-1 text-white">
+      <!-- <p>&copy; 2024 Harrison & Whitman LLP</p> -->
+    </div>
+  </footer>
+
+
+  <script>
+    // Wait for all images to load before hiding the loader
+    window.onload = function () {
+      document.getElementById("loader").classList.add("hide");
+      setTimeout(() => {
+        document.getElementById("loader").style.display = "none";
+      }, 500); // Match the CSS transition
+      // document.getElementById("content").style.display = "block";
+    };
+  </script>
+
+  <!-- scripts -->
+  <!-- Include Bootstrap and jQuery scripts here -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script type="module" src="/js/main.js"></script>
+  <script>
+    AOS.init({
+      // Other AOS options here
+      loop: false // Disable looping
+    });
+
+  </script>
+  <script>
+    async function fetchEvents() {
+      const res = await fetch('https://nft-broker-e3q7.onrender.com/api/retrieve-events');
+      let events = await res.json();
+
+      // Reverse to chronological order
+      events = events.reverse();
+
+      const container = document.getElementById('eventContainer');
+
+      events.forEach(event => {
+        const description = document.createElement('p');
+        description.className = 'mt-5';
+        description.style.fontStyle = 'italic';
+        description.style.fontWeight = 'bold';
+        description.style.marginBottom = '-1px';
+        description.textContent = event.description;
+        container.appendChild(description);
+
+        for (let i = 0; i < event.images.length; i += 3) {
+          const row = document.createElement('div');
+          row.className = 'row g-4 mb-5';
+
+          event.images.slice(i, i + 3).forEach(url => {
+            const col = document.createElement('div');
+            col.className = 'col-md-4 mb-4';
+
+            const img = document.createElement('img');
+            img.src = url;
+            img.className = 'event-img'; // use CSS class for consistency
+
+            col.appendChild(img);
+            row.appendChild(col);
+          });
+
+          container.appendChild(row);
+        }
+      });
+    }
+
+    fetchEvents();
+  </script>
+
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Include Bootstrap and jQuery scripts here -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.navbar-toggler').click(function () {
+        $('#elementToHide').toggle(); // Toggle visibility of the element
+      });
+    });
+  </script>
+</body>
+
+</html>

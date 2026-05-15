@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://oremiazibabenfoundation.org/sitemap.xml

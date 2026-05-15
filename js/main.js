@@ -1,32 +1,89 @@
+// Select the navbar and nav links
+const navbar = document.querySelector('.navbar');
+const navLinks = document.querySelectorAll('.navbar .nav-link');
+const navbarToggler = document.querySelector('.navbar-toggler');
+const elementToHide = document.getElementById('elementToHide');
 
- const nav = document.querySelector('.main-nav');
- // Function to be called when the action should be fired
- function triggerAction() {
-    // console.log('Action triggered!');
-    nav.classList.remove('bg-transparent');
-    nav.classList.add('theme');
-    // You can replace this with your desired action code
-  }
+// Toggle navbar expanded/collapsed state
+navbarToggler.addEventListener('click', () => {
+    const isExpanded = navbarToggler.getAttribute('aria-expanded') === 'true';
 
-  function removeAction(){
-    console.log('action removed');
-    nav.classList.add('bg-transparent');
-    nav.classList.remove('theme');
-  }
+    // Toggle visibility of the element
+    elementToHide.style.display = elementToHide.style.display === 'none' ? 'block' : 'none';
 
-  // Add a scroll event listener
-  window.addEventListener('scroll', () => {
-    // Get the scroll position relative to the top of the hero section
-    const scrollPosition = window.scrollY;
-
-    // Define a threshold (e.g., 100 pixels) to trigger the action after scrolling past
-    const threshold = 100;
-
-    // Check if the scroll position is below the hero section by at least the threshold
-    if (scrollPosition >= threshold) {
-      triggerAction();
+    if (isExpanded) {
+        // Only remove scroll classes if scrollY is less than 100
+        if (window.scrollY < 100) {
+            navbar.classList.remove('scrolled');
+            navLinks.forEach(link => link.classList.remove('scrolled-link'));
+        }
+    } else {
+        navbar.classList.add('scrolled');
+        navLinks.forEach(link => link.classList.add('scrolled-link'));
     }
-    else{
-        removeAction();
+});
+
+
+// Handle scroll effects
+window.addEventListener('scroll', () => {
+    const isExpanded = navbarToggler.getAttribute('aria-expanded') === 'true';
+    if (!isExpanded && window.scrollY > 100) {
+        navbar.classList.add('scrolled'); // Add class to navbar
+        navLinks.forEach(link => link.classList.add('scrolled-link')); // Add class to nav links
+    } else if (!isExpanded) {
+        navbar.classList.remove('scrolled'); // Remove class from navbar
+        navLinks.forEach(link => link.classList.remove('scrolled-link')); // Remove class from nav links
     }
-  });
+});
+
+// Notification functions
+function showNotification() {
+    const notification = document.getElementById("chatNotification");
+    if (notification) {
+        notification.style.display = "block"; // Show notification
+    }
+}
+
+function closeNotification() {
+    const notification = document.getElementById("chatNotification");
+    if (notification) {
+        notification.style.display = "none"; // Hide notification
+    }
+}
+
+// Hero section image and heading updates
+const heroSection = document.getElementById("heroSection");
+const heroHeading = document.getElementById("heroHeading");
+
+// Arrays of background images and corresponding headings
+const backgroundImages = [
+    "https://firebasestorage.googleapis.com/v0/b/broker-81de0.appspot.com/o/oremi%20files%2Fgroup_pic.jpg?alt=media&token=65c83b2d-5a28-4239-afd4-361fb67992cc"
+];
+const headings = [
+    "Charity Foundation"
+];
+
+// Ensure arrays have the same length
+if (backgroundImages.length !== headings.length) {
+    console.error("Background images and headings arrays must have the same length.");
+}
+
+const intervalTime = 8000; // Interval time in milliseconds
+let index = 0;
+
+function changeHeroContent() {
+    if (heroSection && heroHeading) {
+        // Update background image and heading text
+        heroSection.style.backgroundImage = `url(${backgroundImages[index]})`;
+        heroHeading.textContent = headings[index];
+
+        // Move to the next index
+        index = (index + 1) % backgroundImages.length;
+    }
+}
+
+// Initialize hero section updates
+if (backgroundImages.length > 0 && headings.length > 0) {
+    changeHeroContent();
+    setInterval(changeHeroContent, intervalTime);
+}
