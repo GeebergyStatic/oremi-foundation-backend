@@ -5,6 +5,8 @@ const mongoose = require('mongoose');
 const router = express.Router();
 
 const multer = require('multer');
+const path = require('path');
+const fs = require('fs');
 
 const {
   uploadFileToR2,
@@ -38,8 +40,47 @@ connectToMongoDB();
 // MULTER
 // =========================
 
+if (!fs.existsSync('uploads')) {
+  fs.mkdirSync('uploads');
+}
+
 const upload = multer({
-  storage: multer.memoryStorage(),
+
+  storage: multer.diskStorage({
+
+    destination: function (req, file, cb) {
+      cb(null, 'uploads/');
+    },
+
+    filename: function (req, file, cb) {
+
+      const uniqueName =
+        Date.now() +
+        '-' +
+        Math.round(Math.random() * 1E9) +
+        path.extname(file.originalname);
+
+      cb(null, uniqueName);
+    }
+  }),
+
+  limits: {
+    fileSize: 10 * 1024 * 1024, // 10MB per file
+    files: 30
+  },
+
+  fileFilter: (req, file, cb) => {
+
+    if (!file.mimetype.startsWith('image/')) {
+
+      return cb(
+        new Error('Only image uploads are allowed'),
+        false
+      );
+    }
+
+    cb(null, true);
+  }
 });
 
 // =========================
@@ -118,12 +159,14 @@ router.post(
       const { description } = req.body;
 
       if (!description) {
+
         return res.status(400).json({
           error: 'Description is required'
         });
       }
 
       if (!req.files || !req.files.length) {
+
         return res.status(400).json({
           error: 'No images uploaded'
         });
@@ -133,9 +176,22 @@ router.post(
 
       for (const file of req.files) {
 
-        const filePath = await uploadFileToR2(file);
+        try {
 
-        uploadedImages.push(filePath);
+          const filePath = await uploadFileToR2(file);
+
+          uploadedImages.push(filePath);
+
+          // cleanup temp file
+          fs.unlinkSync(file.path);
+
+        } catch (uploadErr) {
+
+          console.error(
+            'R2 Upload Error:',
+            uploadErr
+          );
+        }
       }
 
       const newEvent = new Event({
@@ -160,7 +216,6 @@ router.post(
     }
   }
 );
-
 // =========================
 // RETRIEVE EVENTS
 // =========================
@@ -406,5 +461,28 @@ router.post(
     }
   }
 );
+
+router.use((err, req, res, next) => {
+
+  console.error(err);
+
+  if (err instanceof multer.MulterError) {
+
+    if (err.code === 'LIMIT_FILE_SIZE') {
+
+      return res.status(400).json({
+        error: 'One or more files exceed 10MB'
+      });
+    }
+
+    return res.status(400).json({
+      error: err.message
+    });
+  }
+
+  res.status(500).json({
+    error: err.message
+  });
+});
 
 module.exports = router;

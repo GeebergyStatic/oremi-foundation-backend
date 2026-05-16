@@ -57,7 +57,7 @@ const heroHeading = document.getElementById("heroHeading");
 
 // Arrays of background images and corresponding headings
 const backgroundImages = [
-    "https://firebasestorage.googleapis.com/v0/b/broker-81de0.appspot.com/o/oremi%20files%2Fgroup_pic.jpg?alt=media&token=65c83b2d-5a28-4239-afd4-361fb67992cc"
+    "https://cdn.oremiazibabenfoundation.org/genral-page-images/group_pic.jpg"
 ];
 const headings = [
     "Charity Foundation"
