@@ -417,12 +417,10 @@ router.post(
 
       const { eventId } = req.body;
 
-      const event = await Event.findById(eventId);
+      if (!eventId) {
 
-      if (!event) {
-
-        return res.status(404).json({
-          message: 'Event not found'
+        return res.status(400).json({
+          error: 'Event ID required'
         });
       }
 
@@ -433,6 +431,15 @@ router.post(
         });
       }
 
+      const event = await Event.findById(eventId);
+
+      if (!event) {
+
+        return res.status(404).json({
+          error: 'Event not found'
+        });
+      }
+
       const uploadedImages = [];
 
       for (const file of req.files) {
@@ -440,6 +447,9 @@ router.post(
         const filePath = await uploadFileToR2(file);
 
         uploadedImages.push(filePath);
+
+        // cleanup temp file
+        fs.unlinkSync(file.path);
       }
 
       event.images.push(...uploadedImages);

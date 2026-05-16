@@ -197,7 +197,7 @@
 
             // COMPRESS IMAGE
             const compressedFile =
-              await imageCompression(file, {
+              await window.imageCompression(file, {
 
                 maxSizeMB: 1.5,
                 maxWidthOrHeight: 1920,
@@ -522,22 +522,57 @@
 
       try {
 
-        const fileInput = document.getElementById(
-          `addImages-${eventId}`
-        );
+        const fileInput =
+          document.getElementById(
+            `addImages-${eventId}`
+          );
 
         const files = fileInput.files;
 
         if (!files.length) {
-          return alert("Please select images");
+
+          return alert(
+            "Please select images"
+          );
         }
+
+        // FIND THE BUTTON
+        const button =
+          fileInput.parentElement.querySelector('button');
+
+        // DISABLE BUTTON
+        button.disabled = true;
+
+        const originalText =
+          button.innerHTML;
+
+        button.innerHTML = `
+      <span class="spinner-border spinner-border-sm"></span>
+      Uploading...
+    `;
 
         const formData = new FormData();
 
         formData.append('eventId', eventId);
 
         for (let i = 0; i < files.length; i++) {
-          formData.append('images', files[i]);
+
+          const file = files[i];
+
+          // COMPRESS IMAGE
+          const compressedFile =
+            await window.imageCompression(file, {
+
+              maxSizeMB: 1.5,
+              maxWidthOrHeight: 1920,
+              useWebWorker: true
+            });
+
+          formData.append(
+            'images',
+            compressedFile,
+            compressedFile.name
+          );
         }
 
         const res = await fetch(
@@ -551,10 +586,15 @@
         const data = await res.json();
 
         if (!res.ok) {
-          throw new Error(data.error || 'Upload failed');
+
+          throw new Error(
+            data.error || 'Upload failed'
+          );
         }
 
-        alert('Images added successfully!');
+        alert(
+          'Images added successfully!'
+        );
 
         location.reload();
 
@@ -562,10 +602,28 @@
 
         console.error(err);
 
-        alert(err.message || 'Failed to add images');
+        alert(
+          err.message ||
+          'Failed to add images'
+        );
+
+      } finally {
+
+        // RE-ENABLE BUTTON
+        const fileInput =
+          document.getElementById(
+            `addImages-${eventId}`
+          );
+
+        const button =
+          fileInput.parentElement.querySelector('button');
+
+        button.disabled = false;
+
+        button.innerHTML =
+          'Add More Images';
       }
     }
-
     // =========================
     // INITIAL LOAD
     // =========================
