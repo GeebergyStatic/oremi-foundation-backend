@@ -397,23 +397,80 @@
       /* Maintain aspect ratio */
     }
 
-    .event-img {
+    .event-image-wrapper {
+      position: relative;
+
       width: 100%;
-      height: 300px;
-      /* Consistent height */
+
+      height: 420px;
+
+      border-radius: 16px;
+
+      overflow: hidden;
+
+      background: #e9ecef;
+
+      border: 1px solid #d8dce0;
+
+      box-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Skeleton */
+    .image-skeleton {
+      position: absolute;
+
+      inset: 0;
+
+      z-index: 1;
+
+      background: linear-gradient(90deg,
+          #dfe3e6 20%,
+          #f5f6f7 50%,
+          #dfe3e6 80%);
+
+      background-size: 300% 100%;
+
+      animation: skeleton-loading 1.4s infinite linear;
+    }
+
+    @keyframes skeleton-loading {
+
+      0% {
+        background-position: 100% 0;
+      }
+
+      100% {
+        background-position: -100% 0;
+      }
+    }
+
+    .event-img {
+
+      width: 100%;
+
+      height: 100%;
+
       object-fit: cover;
-      object-position: top center;
-      /* ← Fixes top being cut off */
-      border-radius: 12px;
+
+      object-position: center;
+
       display: block;
-      transition: transform 0.3s ease;
+
+      opacity: 0;
+
+      transition:
+        opacity 0.4s ease,
+        transform 0.3s ease;
+    }
+
+    .event-img.loaded {
+      opacity: 1;
     }
 
     .event-img:hover {
-      transform: scale(1.02);
+      transform: scale(1.03);
     }
-
-
 
     @media(min-width: 1026px) {
       .hero-section {
@@ -454,6 +511,13 @@
     @media(max-width: 991px) {
       .sm-full {
         width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .event-image-wrapper {
+        height: 300px;
       }
     }
 
@@ -626,42 +690,119 @@
   </script>
   <script>
     async function fetchEvents() {
-      const res = await fetch('https://oremi-foundation-backend.onrender.com/api/retrieve-events');
-      let events = await res.json();
 
-      // Reverse to chronological order
-      events = events.reverse();
+      try {
 
-      const container = document.getElementById('eventContainer');
+        const res = await fetch(
+          'https://oremi-foundation-backend.onrender.com/api/retrieve-events'
+        );
 
-      events.forEach(event => {
-        const description = document.createElement('p');
-        description.className = 'mt-5';
-        description.style.fontStyle = 'italic';
-        description.style.fontWeight = 'bold';
-        description.style.marginBottom = '-1px';
-        description.textContent = event.description;
-        container.appendChild(description);
+        let events = await res.json();
 
-        for (let i = 0; i < event.images.length; i += 3) {
-          const row = document.createElement('div');
-          row.className = 'row g-4 mb-5';
+        // chronological order
+        events = events.reverse();
 
-          event.images.slice(i, i + 3).forEach(url => {
-            const col = document.createElement('div');
-            col.className = 'col-md-4 mb-4';
+        const container =
+          document.getElementById('eventContainer');
 
-            const img = document.createElement('img');
-            img.src = url;
-            img.className = 'event-img'; // use CSS class for consistency
+        container.innerHTML = '';
 
-            col.appendChild(img);
-            row.appendChild(col);
-          });
+        events.forEach(event => {
 
-          container.appendChild(row);
-        }
-      });
+          // DESCRIPTION
+          const description =
+            document.createElement('p');
+
+          description.className = 'mt-5';
+
+          description.style.fontStyle = 'italic';
+          description.style.fontWeight = 'bold';
+          description.style.marginBottom = '15px';
+
+          description.textContent =
+            event.description;
+
+          container.appendChild(description);
+
+          // IMAGE ROWS
+          for (let i = 0; i < event.images.length; i += 3) {
+
+            const row =
+              document.createElement('div');
+
+            row.className = 'row g-4 mb-5';
+
+            event.images
+              .slice(i, i + 3)
+              .forEach(url => {
+
+                const col =
+                  document.createElement('div');
+
+                col.className =
+                  'col-md-4 mb-4';
+
+                // WRAPPER
+                const wrapper =
+                  document.createElement('div');
+
+                wrapper.className =
+                  'event-image-wrapper';
+
+                // SKELETON
+                const skeleton =
+                  document.createElement('div');
+
+                skeleton.className =
+                  'image-skeleton';
+
+                // IMAGE
+                const img =
+                  document.createElement('img');
+
+                img.src = url;
+
+                img.className = 'event-img';
+
+                img.loading = 'lazy';
+
+                img.onload = () => {
+
+                  img.classList.add('loaded');
+
+                  skeleton.remove();
+                };
+
+                img.onerror = () => {
+
+                  skeleton.remove();
+
+                  wrapper.innerHTML = `
+                <div class="p-4 text-center text-muted">
+                  Failed to load image
+                </div>
+              `;
+                };
+
+                wrapper.appendChild(skeleton);
+
+                wrapper.appendChild(img);
+
+                col.appendChild(wrapper);
+
+                row.appendChild(col);
+              });
+
+            container.appendChild(row);
+          }
+        });
+
+      } catch (err) {
+
+        console.error(err);
+
+        alert('Failed to fetch events');
+      }
     }
 
     fetchEvents();
