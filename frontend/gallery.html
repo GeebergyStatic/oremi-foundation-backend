@@ -5,29 +5,27 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description"
-    content="Get in touch with Oremi Azibaben Foundation. Reach out for support, donations, partnerships, or inquiries.">
+    content="Browse the gallery of Oremi Azibaben Foundation's past events, community outreach programs, and charitable initiatives.">
   <meta name="keywords"
-    content="contact, Oremi, Eunice Azibaben Obein, Oremi Azibaben Foundation, support, donations, partnerships, charity, Oremi Foundation, Azibaben Foundation, charities in nigeria, charities in bayelsa state, charity in nigeria, charity in bayelsa state">
+    content="gallery, Oremi, Eunice Azibaben Obein, charity events, community programs, photos, Oremi Azibaben Foundation, Oremi Foundation, Azibaben Foundation, charities in nigeria, charities in bayelsa state, charity in nigeria, charity in bayelsa state">
   <meta name="author" content="Oremi Azibaben Foundation">
-  <meta property="og:title" content="Contact Us | Oremi Azibaben Foundation">
+  <meta property="og:title" content="Gallery | Oremi Azibaben Foundation">
   <meta property="og:description"
-    content="Contact Oremi Azibaben Foundation for any inquiries, partnership opportunities, or support. We're here to help!">
-  <meta property="og:url" content="https://oremiazibabenfoundation.org/contact">
+    content="Explore photos from our charity events, outreach programs, and community projects at Oremi Azibaben Foundation.">
+  <meta property="og:url" content="https://oremiazibabenfoundation.org/gallery">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Contact Us | Oremi Azibaben Foundation">
+  <meta name="twitter:title" content="Gallery | Oremi Azibaben Foundation">
   <meta name="twitter:description"
-    content="Contact Oremi Azibaben Foundation for any inquiries, partnership opportunities, or support. We're here to help!">
-
-  <title>Contact Us</title>
+    content="Explore photos from our charity events, outreach programs, and community projects at Oremi Azibaben Foundation.">
+  <title>Gallery</title>
   <link rel="icon" href="https://cdn.oremiazibabenfoundation.org/genral-page-images/logo_raw_copy.PNG"
     type="image/png" />
-  <link rel="canonical" href="https://oremiazibabenfoundation.org/contact" />
+  <link rel="canonical" href="https://oremiazibabenfoundation.org/gallery" />
 
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
   <link rel="stylesheet" href="styles/styles.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -242,6 +240,7 @@
       background-color: #f65d00;
     }
 
+
     .custom-success {
       background-color: #D4EDDA;
       color: #155724;
@@ -296,10 +295,10 @@
       text-align: left;
       padding: 80px 30px;
       position: relative;
-      background: url('https://cdn.oremiazibabenfoundation.org/genral-page-images/background.jpg');
+      background: url('https://cdn.oremiazibabenfoundation.org/genral-page-images/IMG-20250106-WA0013.jpg');
       background-size: cover;
       /* Adjust the percentage as needed */
-      background-position: center;
+      background-position: top;
       background-repeat: no-repeat;
       transition: background-image 1s ease-in-out;
       /* Smooth background change */
@@ -398,6 +397,80 @@
       /* Maintain aspect ratio */
     }
 
+    .event-image-wrapper {
+      position: relative;
+
+      width: 100%;
+
+      height: 420px;
+
+      border-radius: 16px;
+
+      overflow: hidden;
+
+      background: #e9ecef;
+
+      border: 1px solid #d8dce0;
+
+      box-shadow:
+        0 2px 10px rgba(0, 0, 0, 0.05);
+    }
+
+    /* Skeleton */
+    .image-skeleton {
+      position: absolute;
+
+      inset: 0;
+
+      z-index: 1;
+
+      background: linear-gradient(90deg,
+          #dfe3e6 20%,
+          #f5f6f7 50%,
+          #dfe3e6 80%);
+
+      background-size: 300% 100%;
+
+      animation: skeleton-loading 1.4s infinite linear;
+    }
+
+    @keyframes skeleton-loading {
+
+      0% {
+        background-position: 100% 0;
+      }
+
+      100% {
+        background-position: -100% 0;
+      }
+    }
+
+    .event-img {
+
+      width: 100%;
+
+      height: 100%;
+
+      object-fit: cover;
+
+      object-position: center;
+
+      display: block;
+
+      opacity: 0;
+
+      transition:
+        opacity 0.4s ease,
+        transform 0.3s ease;
+    }
+
+    .event-img.loaded {
+      opacity: 1;
+    }
+
+    .event-img:hover {
+      transform: scale(1.03);
+    }
 
     @media(min-width: 1026px) {
       .hero-section {
@@ -438,6 +511,13 @@
     @media(max-width: 991px) {
       .sm-full {
         width: 100%;
+      }
+    }
+
+    @media (max-width: 768px) {
+
+      .event-image-wrapper {
+        height: 300px;
       }
     }
 
@@ -493,11 +573,11 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
           <ul class="navbar-nav ml-auto">
-            <li class="nav-item"><a class="nav-link" href="/index">Home</a></li>
-            <li class="nav-item"><a class="nav-link" href="/about">About Us</a></li>
-            <li class="nav-item"><a class="nav-link" href="/our_team">Our Team</a></li>
-            <li class="nav-item"><a class="nav-link" href="/gallery">Gallery</a></li>
-            <li class="nav-item"><a class="nav-link" href="/contact">Contact</a></li>
+            <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/about.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="/our_team.html">Our Team</a></li>
+            <li class="nav-item"><a class="nav-link" href="/gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
           </ul>
         </div>
       </div>
@@ -506,11 +586,11 @@
     <div class="container-fluid container-content">
       <div class="row">
         <div class="col-md-7" data-aos="fade-up" data-aos-duration="800" data-aos-once="true">
-          <h1 class="hero-heading head" style="font-size: 60px;">Contact Us</h1>
+          <h1 class="hero-heading head" style="font-size: 70px;">Gallery</h1>
         </div>
         <div class="col-md-5">
           <blockquote style="font-size: 25px; font-style: italic; margin-top: 5rem; ">
-            We are just a step away from connecting with you to bring hope and make a meaningful impact together.
+            A collection of moments that capture the essence of our work and the lives we've touched.
           </blockquote>
         </div>
       </div>
@@ -518,72 +598,16 @@
   </div>
 
 
-  <!-- Contact -->
-  <div class="container-fluid m-0 contact p-5" id="contact">
-    <div class="row d-flex justify-content-between">
-      <div class="right col-md-5">
-        <dotlottie-player src="https://lottie.host/5e9b7f15-e2b7-4531-b458-f8b1ecd56d6b/JSfgLT9f3W.lottie"
-          background="transparent" speed="0.8" style="width: 100%; height: 100%;" loop autoplay></dotlottie-player>
-      </div>
-      <div class="left col-md-5 mt-4">
-        <!-- form -->
-        <div class="custom-form-container">
-          <h1 class="custom-form-title">Contact Us</h1>
-          <form id="customContactForm">
-            <div class="custom-form-group">
-              <label for="customName" class="custom-form-label">Name:</label>
-              <input type="text" id="customName" name="customName" class="custom-input-field"
-                placeholder="Your full name" required>
-            </div>
-            <div class="custom-form-group">
-              <label for="customEmail" class="custom-form-label">Email:</label>
-              <input type="email" id="customEmail" name="customEmail" class="custom-input-field"
-                placeholder="Your email address" required>
-            </div>
-            <div class="custom-form-group">
-              <label for="customMessage" class="custom-form-label">Message:</label>
-              <textarea id="customMessage" name="customMessage" class="custom-textarea-field"
-                placeholder="Write your message" required></textarea>
-            </div>
-            <button type="submit" class="custom-submit-button">Send Message</button>
-          </form>
-        </div>
+  <!-- gallery -->
+  <div class="container mt-5 p-3 mb-5">
+    <h3 class="head text-center">Events and Outreaches</h3>
+    <div style="background-color: #f65d00; height: 10px; width: 50%;" class="text-center mx-auto mb-5"></div>
+
+    <!-- fifth event section -->
+    <div id="eventContainer" class="container mt-5"></div>
+    <!-- next row -->
 
 
-        <!-- Notification Section -->
-        <div id="notification" class="notification"></div>
-      </div>
-    </div>
-  </div>
-
-
-  <!-- address -->
-  <div class="container">
-    <h2 class="mb-3" style="color: #f65d00;">Our Address</h2>
-    <div class="row">
-      <div class="col-md-6">
-        <div class="row">
-          <div class="col-sm-6">
-            <h4 class="fw-bold" style="color: #000315;">HEAD OFFICE</h4>
-            <p>No 75 Captain Ayeni Street , kpansia. Yenegoa, Bayelsa state . </p>
-          </div>
-          <div class="col-sm-6">
-            <h4 class="fw-bold" style="color: #000315;">PHONE</h4>
-            <p>(+234) 08082915070</p>
-          </div>
-        </div>
-        <div class="row">
-          <div class="col-sm-6">
-            <h4 class="fw-bold" style="color: #000315;">EMAIL</h4>
-            <p>oremifoundation.ng@gmail.com</p>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <dotlottie-player src="https://lottie.host/b76fe1ae-bcbb-4a41-90e2-220b1fd1c2eb/jsXO3dfjic.lottie"
-          background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></dotlottie-player>
-      </div>
-    </div>
   </div>
 
 
@@ -595,11 +619,11 @@
       <div class="col-md-4">
         <h3 class="footer-title text-secondary">Explore</h3>
         <ul class="footer-list">
-          <li><a href="/index">Home</a></li>
-          <li><a href="/about">About Us</a></li>
-          <li><a href="/our_team">Our Team</a></li>
-          <li><a href="/gallery">Gallery</a></li>
-          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/our_team.html">Our Team</a></li>
+          <li><a href="/gallery.html">Gallery</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
         </ul>
       </div>
 
@@ -624,6 +648,7 @@
         <p><a href="mailto:oremifoundation.ng@gmail.com" class="contact-link">oremifoundation.ng@gmail.com</a></p>
       </div>
 
+
       <!-- Notification Popup -->
       <div id="chatNotification" class="chat-popup">
         <p>
@@ -640,6 +665,7 @@
     </div>
   </footer>
 
+
   <script>
     // Wait for all images to load before hiding the loader
     window.onload = function () {
@@ -651,9 +677,7 @@
     };
   </script>
 
-
   <!-- scripts -->
-
   <!-- Include Bootstrap and jQuery scripts here -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script type="module" src="/js/main.js"></script>
@@ -664,63 +688,126 @@
     });
 
   </script>
-  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
   <script>
-    const form = document.getElementById('customContactForm');
-    const submitButton = form.querySelector('.custom-submit-button');
-
-    form.addEventListener('submit', async function (e) {
-      e.preventDefault();
-      submitButton.disabled = true;
-      submitButton.textContent = 'Sending Message...';
-
-      const formData = new FormData(this);
-      const formObject = {};
-      formData.forEach((value, key) => {
-        formObject[key] = value;
-      });
+    async function fetchEvents() {
 
       try {
-        const response = await fetch('https://broker-nel-app-oial.onrender.com/api/send-email', {
-          method: 'POST',
-          headers: {
-            'Content-Type': 'application/json',
-          },
-          body: JSON.stringify(formObject),
+
+        const res = await fetch(
+          'https://oremi-foundation-backend.onrender.com/api/retrieve-events'
+        );
+
+        let events = await res.json();
+
+        // chronological order
+        events = events.reverse();
+
+        const container =
+          document.getElementById('eventContainer');
+
+        container.innerHTML = '';
+
+        events.forEach(event => {
+
+          // DESCRIPTION
+          const description =
+            document.createElement('p');
+
+          description.className = 'mt-5';
+
+          description.style.fontStyle = 'italic';
+          description.style.fontWeight = 'bold';
+          description.style.marginBottom = '15px';
+
+          description.textContent =
+            event.description;
+
+          container.appendChild(description);
+
+          // IMAGE ROWS
+          for (let i = 0; i < event.images.length; i += 3) {
+
+            const row =
+              document.createElement('div');
+
+            row.className = 'row g-4 mb-5';
+
+            event.images
+              .slice(i, i + 3)
+              .forEach(url => {
+
+                const col =
+                  document.createElement('div');
+
+                col.className =
+                  'col-md-4 mb-4';
+
+                // WRAPPER
+                const wrapper =
+                  document.createElement('div');
+
+                wrapper.className =
+                  'event-image-wrapper';
+
+                // SKELETON
+                const skeleton =
+                  document.createElement('div');
+
+                skeleton.className =
+                  'image-skeleton';
+
+                // IMAGE
+                const img =
+                  document.createElement('img');
+
+                img.src = url;
+
+                img.className = 'event-img';
+
+                img.loading = 'lazy';
+
+                img.onload = () => {
+
+                  img.classList.add('loaded');
+
+                  skeleton.remove();
+                };
+
+                img.onerror = () => {
+
+                  skeleton.remove();
+
+                  wrapper.innerHTML = `
+                <div class="p-4 text-center text-muted">
+                  Failed to load image
+                </div>
+              `;
+                };
+
+                wrapper.appendChild(skeleton);
+
+                wrapper.appendChild(img);
+
+                col.appendChild(wrapper);
+
+                row.appendChild(col);
+              });
+
+            container.appendChild(row);
+          }
         });
 
-        const result = await response.text();
-        console.log('Response received:', result);
-        setTimeout(() => {
-          showNotification(result, 'custom-success');
-          form.reset();
-        }, 1000);
+      } catch (err) {
 
-      } catch (error) {
-        const errorMessage = typeof error === 'string' ? error : error.message || 'Unknown error occurred';
-        console.error('Error occurred:', errorMessage);
-        setTimeout(() => {
-          showNotification(errorMessage, 'custom-error');
-        }, 1000);
-      } finally {
-        submitButton.disabled = false;
-        submitButton.textContent = 'Send Message';
+        console.error(err);
+
+        alert('Failed to fetch events');
       }
-    });
-
-    function showNotification(message, type) {
-      Toastify({
-        text: message,
-        duration: 3000,
-        close: true,
-        gravity: 'top',
-        position: 'right',
-        backgroundColor: type === 'custom-success' ? '#28a745' : '#dc3545',
-        stopOnFocus: true,
-      }).showToast();
     }
+
+    fetchEvents();
   </script>
-  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+
   <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>

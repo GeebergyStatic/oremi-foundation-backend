@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Oremi Azibaben Foundation: Making a difference through charitable programs and community empowerment.">
+  <meta name="keywords"
+    content="charity, foundation, community, empowerment, donations, Oremi, Eunice Azibaben Obein, Oremi Azibaben, Oremi Foundation, Azibaben Foundation, Oremi Azibaben Foundation, charities in nigeria, charities in bayelsa state, charity in nigeria, charity in bayelsa state">
+  <meta name="author" content="Oremi Azibaben Foundation">
+  <meta property="og:title" content="Oremi Azibaben Foundation">
+  <meta property="og:description"
+    content="Oremi Azibaben Foundation works to create positive change through charitable initiatives and community development.">
+  <meta property="og:url" content="https://oremiazibabenfoundation.org/">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Oremi Azibaben Foundation">
+  <meta name="twitter:description"
+    content="Oremi Azibaben Foundation works to create positive change through charitable initiatives and community development.">
+  <title>Oremi Azibaben Foundation</title>
+  <link rel="icon" href="https://cdn.oremiazibabenfoundation.org/genral-page-images/logo_raw_copy.PNG"
+    type="image/png" />
+  <link rel="canonical" href="https://oremiazibabenfoundation.org/" />
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Diphylleia&family=Dosis:wght@200..800&family=Playwrite+AU+VIC+Guides&display=swap"
+    rel="stylesheet">
+
+  <style>
+    /* Prevent overflow-x on the whole page */
+    html,
+    body {
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      width: 100%;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      overflow-x: hidden;
+      margin: 0;
+      padding: 0;
+      background-color: #f0f0f0;
+      /* Background color for the entire page */
+    }
+
+    /* Full-screen Loader */
+    #loader {
+      position: fixed;
+      width: 100%;
+      height: 100vh;
+      background: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      animation: pulse 2s ease-in-out infinite;
+      transition: opacity 0.5s ease;
+    }
+
+    #loader.hide {
+      opacity: 0;
+      pointer-events: none;
+    }
+
+    @keyframes pulse {
+
+      0%,
+      100% {
+        transform: scale(1);
+      }
+
+      50% {
+        transform: scale(1.2);
+      }
+    }
+
+    .logo {
+      color: white;
+      background: #dc1e31;
+      border-radius: 40%;
+      padding: 5px;
+    }
+
+    .logo:hover {
+      text-decoration: none !important;
+    }
+
+    .head {
+      font-size: 56px;
+    }
+
+    .navbar {
+      background-color: transparent;
+      transition: all 0.3s ease-in-out;
+      display: flex;
+      /* Ensure the navbar container is flex */
+      justify-content: space-between;
+      /* Add space between brand logo and nav items */
+      align-items: center;
+      /* Center items vertically */
+      padding: 20px;
+      /* Adjust padding as needed */
+    }
+
+
+    /* Navbar style after scrolling 100px */
+    .navbar.scrolled {
+      backdrop-filter: blur(10px);
+      /* Background blur effect */
+      background-color: rgba(254, 245, 227, 0.7) !important;
+      box-shadow: 0px 8px 15px rgba(0, 0, 0, 0.3);
+      /* Shadow effect */
+    }
+
+
+    /* Hover effect for nav links */
+    /* Default nav-link style */
+    /* Nav-link style after scrolling 100px */
+    .navbar .nav-link.scrolled-link {
+      color: #000315 !important;
+      /* New color after scroll */
+    }
+
+    .navbar .nav-link {
+      color: rgba(255, 255, 255, 0.8);
+      color: #ffffff;
+      /* Initial color */
+      transition: color 0.3s ease-in-out;
+      /* Smooth transition for color change */
+      font-weight: 500;
+      margin: 0 10px;
+    }
+
+    .navbar .nav-link:hover {
+      color: #ff6b6b;
+      /* Accent color for hover */
+      text-decoration: underline;
+    }
+
+    /* Navbar logo styling */
+    .navbar-brand img {
+      transition: transform 0.3s ease;
+    }
+
+    .navbar-brand:hover img {
+      transform: scale(1.1);
+      /* Subtle zoom effect */
+    }
+
+    /* Responsive spacing for navbar items */
+    .navbar-nav .nav-item {
+      margin: 0 5px;
+    }
+
+    /* Box shadow and hover interaction */
+    .shadow-blur {
+      box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.5);
+      transition: box-shadow 0.3s ease-in-out;
+    }
+
+    .shadow-blur:hover {
+      box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.8);
+    }
+
+    /* Toggler icon color */
+    .navbar-toggler {
+      border: none;
+    }
+
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='%23FFFFFF' viewBox='0 0 30 30'%3E%3Cpath stroke='rgba%28155, 155, 155, 0.5%29' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+    }
+
+
+    .custom-form-container {
+      background-color: #ffffff;
+      padding: 25px 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      width: 100%;
+      max-width: 450px;
+    }
+
+    .custom-form-title {
+      text-align: center;
+      margin-bottom: 20px;
+      font-size: 24px;
+      color: #333333;
+    }
+
+    .custom-form-group {
+      margin-bottom: 15px;
+    }
+
+    .custom-form-label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+      color: #555555;
+    }
+
+    .custom-input-field,
+    .custom-textarea-field {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #dddddd;
+      border-radius: 5px;
+      font-size: 14px;
+      color: #333333;
+    }
+
+    .custom-textarea-field {
+      resize: none;
+      height: 120px;
+    }
+
+    .custom-submit-button {
+      display: block;
+      width: 100%;
+      background-color: #f65d00;
+      color: #ffffff;
+      padding: 12px;
+      font-size: 16px;
+      font-weight: bold;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+
+    .custom-submit-button:hover {
+      background-color: #f65d00;
+    }
+
+    .custom-success {
+      background-color: #D4EDDA;
+      color: #155724;
+      border: 1px solid #C3E6CB;
+    }
+
+    .custom-error {
+      background-color: #F8D7DA;
+      color: #721C24;
+      border: 1px solid #F5C6CB;
+    }
+
+    /* Mobile adjustments */
+    @media (max-width: 768px) {
+      .navbar {
+        /* backdrop-filter: blur(8px); */
+        background-color: rgba(0, 0, 0, 0.8);
+      }
+
+      .navbar-nav .nav-item {
+        text-align: center;
+        margin: 10px 0;
+      }
+    }
+
+
+    .navbar.fixed-top {
+      background-color: #fff;
+    }
+
+    .navbar-brand {
+      position: absolute;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    .navbar-brand:hover {
+      text-decoration: none !important;
+    }
+
+    .navbar-brand img {
+      width: 200%;
+      /* Adjust the logo size as needed */
+    }
+
+    .mtc {
+      margin-top: 13rem;
+    }
+
+    .hero-section {
+      color: #fff;
+      text-align: left;
+      padding: 80px 30px;
+      position: relative;
+      background-size: cover;
+      background-position: center;
+      transition: background-image 1s ease-in-out;
+      /* Smooth background change */
+    }
+
+    .hero-heading {
+      transition: opacity 0.5s ease-in-out;
+      /* Smooth text fade-in/out */
+      /* font-size: 56px; */
+    }
+
+
+    .hero-image {
+      max-width: 100%;
+      height: auto;
+    }
+
+    #testimonials {
+      width: 100% !important;
+    }
+
+    .btn-theme {
+      background-color: #dc1e31;
+      color: #fff;
+    }
+
+    .btn-theme-last {
+      background-color: #fff;
+      color: #000315;
+    }
+
+    .btn-white {
+      border: 2px solid white;
+      color: white;
+    }
+
+    .btn-white2 {
+      background: white;
+      color: #dc1e31 !important;
+    }
+
+    .btn-white2:hover {
+      background: #dc1e31;
+      color: white !important;
+      text-decoration: none;
+    }
+
+    .btn-white:hover,
+    .btn-theme:hover {
+      background-color: white;
+      color: rgb(0, 0, 0) !important;
+      font-weight: bolder;
+    }
+
+    .glass-container {
+      background-color: rgba(0, 0, 0, 0.65);
+      /* Glassmorphism effect */
+      backdrop-filter: blur(1px);
+      /* Blur the background */
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .container-content {
+      position: relative;
+      padding: 10px;
+      z-index: 1;
+    }
+
+    .gs-box {
+      flex-direction: column;
+    }
+
+    .next-section {
+      background-color: rgba(255, 255, 255, 0.2);
+      /* Glassmorphism effect for the next section */
+    }
+
+    .navbar-nav {
+      display: flex;
+      /* Flex layout for the nav links */
+      gap: 15px;
+      /* Add spacing between nav items */
+      list-style: none;
+      /* Remove default list styles */
+    }
+
+    .navbar-brand img {
+      max-width: 250px;
+      /* Adjust logo size if necessary */
+      height: auto;
+      /* Maintain aspect ratio */
+    }
+
+
+    @media(min-width: 1026px) {
+      .hero-section {
+        padding: 150px 30px;
+      }
+    }
+
+    @media(min-width: 991px) {
+      .sm-full {
+        width: 50%;
+      }
+
+      .carousel-item {
+        margin-left: 25%;
+      }
+
+      .navbar-brand {
+        position: absolute;
+        left: 70%;
+        transform: translateX(-50%);
+      }
+    }
+
+    @media(min-width: 576px) {
+      .hero-section {
+        padding-top: 130px 30px;
+      }
+
+
+
+    }
+
+    @media(min-width: 486px) {
+
+      .container-content {
+        position: relative;
+        padding: 40px;
+        z-index: 1;
+      }
+
+
+    }
+
+    @media(max-width: 991px) {
+      .sm-full {
+        width: 100%;
+      }
+    }
+
+    @media(max-width: 486px) {
+      .testimonial {
+        height: 540px;
+      }
+
+      .head {
+        font-size: 46px;
+      }
+    }
+
+    @media(max-width: 444px) {
+      #elementToHide {
+        margin-left: 2.5rem;
+        /* Equivalent to mx-5 in Bootstrap */
+        margin-right: 2.5rem;
+        /* Equivalent to mx-5 in Bootstrap */
+
+      }
+    }
+
+    @media(max-width: 426px) {
+      .testimonial {
+        height: 650px;
+      }
+    }
+  </style>
+  <!-- chat code -->
+
+
+  <!-- chat code -->
+
+</head>
+
+<body>
+  <div id="loader">
+    <img class="img-fluid" src="https://cdn.oremiazibabenfoundation.org/genral-page-images/logo_main_copy.PNG"
+      alt="Logo">
+  </div>
+  <!-- <div class="glass-container"></div>  -->
+  <div class="hero-section" id="heroSection">
+    <div class="glass-container"></div>
+    <nav class="navbar navbar-expand-xl navbar-dark bg-transparent fixed-top shadow-blur">
+      <div class="container">
+        <a class="navbar-brand" href="#" id="elementToHide">
+          <img class="img-fluid" src="https://cdn.oremiazibabenfoundation.org/genral-page-images/logo_main_copy.PNG"
+            alt="Logo">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="/about.html">About Us</a></li>
+            <li class="nav-item"><a class="nav-link" href="/our_team.html">Our Team</a></li>
+            <li class="nav-item"><a class="nav-link" href="/gallery.html">Gallery</a></li>
+            <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid container-content" style="margin-top: 30px;" id="home">
+      <div class="row">
+        <div class="col-lg-6" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+          <h1 class="hero-heading head" id="heroHeading">Charity Foundation</h1>
+          <p style="font-size: 16px;">
+            The Oremi Azibaben Foundation is a legally registered non-governmental organization (NGO) dedicated to
+            impactful charity work in Nigeria and across Africa. <br> With a global network, the foundation is committed
+            to creating a better world by bringing hope and support to humanity.
+          </p>
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+
+  <div class="container about-section">
+    <div class="row">
+
+      <div class="col-lg-6 mt-5" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
+        <div class="d-flex flex-column align-items-start">
+          <span style="color: #f65d00; font-size: 23px;" class="playwrite-au-vic-guides-regular">Redefining</span>
+          <span class="head mt-1" style="margin-top: -10px; line-height: 100%; margin-bottom: 20px;">Compassion and
+            Impact</span>
+        </div>
+
+        <p>Welcome to the Oremi Azibaben Foundation, a legally registered non-governmental organization based in
+          Nigeria, Africa, with a global network dedicated to transforming lives and uplifting communities. We are
+          driven by a profound commitment to addressing socio-economic challenges through innovative and sustainable
+          charity initiatives.</p>
+        <p> At the heart of our mission is the unwavering belief in humanity’s potential for greatness when empowered
+          with hope and support. From local outreach programs to international collaborations, we work tirelessly to
+          bring meaningful change, one life at a time.
+        <p>The Oremi Azibaben Foundation understands that no act of kindness is too small, and every effort counts in
+          making the world a better place.</p>
+
+        <p>
+        <blockquote>Your trust, our purpose.</blockquote>
+        </p>
+        <div class="text-center mt-5 mb-5">
+          <h3 style="color: #f65d00;" class="founder-name">Eunice Azibaben Obein</h3>
+          <span class="text-secondary">Founder</span>
+        </div>
+      </div>
+      <!-- The Image (Your Existing Code) -->
+      <div class="col-lg-6" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
+        <img id="secretTap" src="https://cdn.oremiazibabenfoundation.org/genral-page-images/founder.JPG" alt=""
+          class="img-fluid d-block" style="border-bottom-left-radius: 50%;">
+      </div>
+
+      <!-- Button trigger (you can trigger with JS on 8-tap detection) -->
+      <button type="button" class="d-none" id="triggerLoginModal" data-bs-toggle="modal"
+        data-bs-target="#adminLoginModal">
+      </button>
+
+      <!-- Login Modal -->
+      <!-- Modal -->
+      <div class="modal fade" id="adminLoginModal" tabindex="-1" aria-labelledby="adminLoginModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+          <div class="modal-content rounded-3 shadow-lg">
+            <div class="modal-header text-white bg-dark">
+              <h5 class="modal-title" id="adminLoginModalLabel">Admin Login</h5>
+              <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                aria-label="Close"></button>
+            </div>
+            <div class="modal-body px-4 py-3">
+
+              <div id="loginFeedback" class="mb-3 text-danger text-center" style="display: none;"></div>
+
+              <div class="mb-3">
+                <label for="adminEmail" class="form-label">Email</label>
+                <input type="email" class="form-control" id="adminEmail" placeholder="Enter your email">
+              </div>
+
+              <div class="mb-4">
+                <label for="adminPassword" class="form-label">Password</label>
+                <div class="input-group">
+                  <input type="password" class="form-control" id="adminPassword" placeholder="Enter your password">
+                  <button class="btn btn-outline-secondary p-1 px-2" type="button" id="togglePassword">
+                    <i class="bi bi-eye-slash" id="togglePasswordIcon" style="font-size: 0.9rem;"></i>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Button -->
+              <div class="d-flex justify-content-center">
+                <button id="adminLoginBtn" onclick="submitLogin()" class="btn"
+                  style="background-color: #f65d00; color: white; width: 150px;">
+                  <span id="loginBtnText">Login</span>
+                  <span id="loginSpinner" class="spinner-border spinner-border-sm d-none" role="status"
+                    aria-hidden="true"></span>
+                </button>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+  </div>
+
+
+  <div class="next-section p-5 mt-5">
+    <div class="text-center center-sm mx-auto" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+      <h1 class="bolder head">Content</h1>
+      <div style="background-color: #f65d00; height: 10px; width: 50%;" class="text-center mx-auto"></div>
+    </div>
+    <div class="section-with-boxes mt-2">
+      <p class="text-center" style="font-size: 18px;">Explore Our Pages to Learn More About Our Mission and Efforts to
+        Create Lasting Change</p>
+      <div class="container">
+        <div class="row">
+          <!-- Box 1 -->
+          <div class="col-md-4" data-aos="fade-right" data-aos-duration="1000" data-aos-once="true">
+            <div class="mt-3">
+              <div class="image-container">
+                <img src="https://cdn.oremiazibabenfoundation.org/genral-page-images/about_us.jpg" alt="about us">
+                <div class="overlay p-3">
+                  <h3>About Us</h3>
+                  <p>"You can rely on the unwavering dedication of a team that values compassion over recognition"</p>
+                  <a href="/about.html" class="btn-link">Explore →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Box 2 -->
+          <div class="col-md-4" data-aos="fade-up" data-aos-duration="1000" data-aos-once="true">
+            <div class="mt-3">
+              <div class="image-container">
+                <img src="https://cdn.oremiazibabenfoundation.org/genral-page-images/background.jpg" alt="our team">
+                <div class="overlay p-3">
+                  <h3>Our Team</h3>
+                  <p>A dedicated group of compassionate individuals with an unwavering commitment to making a
+                    difference.</p>
+                  <a href="/our_team.html" class="btn-link">Explore →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- Box 3 -->
+          <div class="col-md-4" data-aos="fade-left" data-aos-duration="1000" data-aos-once="true">
+            <div class="mt-3">
+              <div class="image-container">
+                <img src="https://cdn.oremiazibabenfoundation.org/genral-page-images/certificate.jpg" alt="gallery">
+                <div class="overlay p-3">
+                  <h3>Gallery</h3>
+                  <p>A collection of moments that capture the essence of our work and the lives we've touched.</p>
+                  <a href="/gallery.html" class="btn-link">Explore →</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+
+
+  <!-- Contact -->
+  <div class="container-fluid m-0 contact p-5" id="contact">
+    <div class="row d-flex justify-content-between">
+      <div class="right col-md-5">
+        <dotlottie-player src="https://lottie.host/b76fe1ae-bcbb-4a41-90e2-220b1fd1c2eb/jsXO3dfjic.lottie"
+          background="transparent" speed="1" style="width: 100%; height: 100%;" loop autoplay></dotlottie-player>
+      </div>
+      <div class="left col-md-5 mt-4">
+        <div class="custom-form-container">
+          <h1 class="custom-form-title">Contact Us</h1>
+          <form id="customContactForm">
+            <div class="custom-form-group">
+              <label for="customName" class="custom-form-label">Name:</label>
+              <input type="text" id="customName" name="customName" class="custom-input-field"
+                placeholder="Your full name" required>
+            </div>
+            <div class="custom-form-group">
+              <label for="customEmail" class="custom-form-label">Email:</label>
+              <input type="email" id="customEmail" name="customEmail" class="custom-input-field"
+                placeholder="Your email address" required>
+            </div>
+            <div class="custom-form-group">
+              <label for="customMessage" class="custom-form-label">Message:</label>
+              <textarea id="customMessage" name="customMessage" class="custom-textarea-field"
+                placeholder="Write your message" required></textarea>
+            </div>
+            <button type="submit" class="custom-submit-button">Send Message</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- end of contact -->
+
+  <!-- footer -->
+  <footer class="footer mt-0 container-fluid">
+    <div class="row text-white">
+      <!-- Get In Touch Section -->
+      <div class="col-md-4">
+        <h3 class="footer-title text-secondary">Explore</h3>
+        <ul class="footer-list">
+          <li><a href="/index.html">Home</a></li>
+          <li><a href="/about.html">About Us</a></li>
+          <li><a href="/our_team.html">Our Team</a></li>
+          <li><a href="/gallery.html">Gallery</a></li>
+          <li><a href="/contact.html">Contact Us</a></li>
+        </ul>
+      </div>
+
+      <!-- Account Section -->
+      <div class="col-md-4">
+        <h3 class="footer-title text-secondary">About Us</h3>
+        <p>
+          The Oremi Azibaben Foundation is a legally registered non-governmental organization (NGO) dedicated to
+          impactful charity work in Nigeria and across Africa. With a global network, the foundation is committed to
+          creating a better world by bringing hope and support to humanity.
+
+
+        </p>
+      </div>
+
+      <!-- Call-to-Action Button -->
+      <!-- Consult Us Button -->
+      <div class="col-md-4 mt-4">
+        <h3 class="footer-title text-secondary">Contact Us</h3>
+        <p>No 75 Captain Ayeni Street, Kpansia, Yenagoa, Bayelsa State</p>
+        <p><a href="tel:+2348082915070" class="contact-link">(+234) 08082915070</a></p>
+        <p><a href="mailto:oremifoundation.ng@gmail.com" class="contact-link">oremifoundation.ng@gmail.com</a></p>
+      </div>
+
+
+    </div>
+
+    <!-- Footer Bottom -->
+    <div class="text-center mt-5 mb-1 text-white">
+      <!-- <p>&copy; 2024 Harrison & Whitman LLP</p> -->
+    </div>
+  </footer>
+
+  <script>
+    // Wait for all images to load before hiding the loader
+    window.onload = function () {
+      document.getElementById("loader").classList.add("hide");
+      setTimeout(() => {
+        document.getElementById("loader").style.display = "none";
+      }, 500); // Match the CSS transition
+      // document.getElementById("content").style.display = "block";
+    };
+  </script>
+
+  <!-- Include Bootstrap and jQuery scripts here -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script type="module" src="/js/main.js"></script>
+  <script>
+    AOS.init({
+      // Other AOS options here
+      loop: false // Disable looping
+    });
+
+  </script>
+  <script>
+    let tapCount = 0;
+    const imageElement = document.querySelector('img[src*="founder.JPG"]');
+
+    imageElement.addEventListener('click', () => {
+      tapCount++;
+      if (tapCount >= 8) {
+        tapCount = 0;
+        document.getElementById('triggerLoginModal').click();
+      }
+    });
+
+  </script>
+
+  <script>
+    document.getElementById('togglePassword').addEventListener('click', function () {
+      const passwordInput = document.getElementById('adminPassword');
+      const icon = document.getElementById('togglePasswordIcon');
+      const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+      passwordInput.setAttribute('type', type);
+      icon.classList.toggle('bi-eye');
+      icon.classList.toggle('bi-eye-slash');
+    });
+
+    function submitLogin() {
+      const email = document.getElementById('adminEmail').value.trim();
+      const password = document.getElementById('adminPassword').value.trim();
+      const feedback = document.getElementById('loginFeedback');
+      const btn = document.getElementById('adminLoginBtn');
+      const btnText = document.getElementById('loginBtnText');
+      const spinner = document.getElementById('loginSpinner');
+
+      feedback.style.display = 'none';
+
+      if (!email || !password) {
+        feedback.textContent = 'Please fill out all fields.';
+        feedback.style.display = 'block';
+        return;
+      }
+
+      // Disable button and show spinner
+      btn.disabled = true;
+      btnText.classList.add('d-none');
+      spinner.classList.remove('d-none');
+
+      fetch('https://oremi-foundation-backend.onrender.com/api/oremi-admin-login', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email, password })
+      })
+        .then(res => res.json())
+        .then(data => {
+          if (data.success && data.userId) {
+            localStorage.setItem('oremi_admin_id', data.userId);
+            location.href = '/admin.html'; // Redirect
+          } else {
+            feedback.textContent = data.message || 'Login failed.';
+            feedback.style.display = 'block';
+          }
+        })
+        .catch(() => {
+          feedback.textContent = 'Something went wrong. Please try again.';
+          feedback.style.display = 'block';
+        })
+        .finally(() => {
+          // Restore button
+          btn.disabled = false;
+          btnText.classList.remove('d-none');
+          spinner.classList.add('d-none');
+        });
+    }
+  </script>
+
+
+
+  <script src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+  <script>
+    const form = document.getElementById('customContactForm');
+    const submitButton = form.querySelector('.custom-submit-button');
+
+    form.addEventListener('submit', async function (e) {
+      e.preventDefault();
+      submitButton.disabled = true;
+      submitButton.textContent = 'Sending Message...';
+
+      const formData = new FormData(this);
+      const formObject = {};
+      formData.forEach((value, key) => {
+        formObject[key] = value;
+      });
+
+      try {
+        const response = await fetch('https://broker-nel-app-oial.onrender.com/api/send-email', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(formObject),
+        });
+
+        const result = await response.text();
+        console.log('Response received:', result);
+        setTimeout(() => {
+          showNotification(result, 'custom-success');
+          form.reset();
+        }, 1000);
+
+      } catch (error) {
+        const errorMessage = typeof error === 'string' ? error : error.message || 'Unknown error occurred';
+        console.error('Error occurred:', errorMessage);
+        setTimeout(() => {
+          showNotification(errorMessage, 'custom-error');
+        }, 1000);
+      } finally {
+        submitButton.disabled = false;
+        submitButton.textContent = 'Send Message';
+      }
+    });
+
+    function showNotification(message, type) {
+      Toastify({
+        text: message,
+        duration: 3000,
+        close: true,
+        gravity: 'top',
+        position: 'right',
+        backgroundColor: type === 'custom-success' ? '#28a745' : '#dc3545',
+        stopOnFocus: true,
+      }).showToast();
+    }
+  </script>
+
+  <script src="https://unpkg.com/@dotlottie/player-component@2.7.12/dist/dotlottie-player.mjs" type="module"></script>
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <!-- Include Bootstrap and jQuery scripts here -->
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="js/main.js"></script>
+  <script>
+    $(document).ready(function () {
+      $('.navbar-toggler').click(function () {
+        $('#elementToHide').toggle(); // Toggle visibility of the element
+      });
+    });
+  </script>
+</body>
+
+</html>
